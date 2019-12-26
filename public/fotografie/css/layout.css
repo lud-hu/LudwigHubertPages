@@ -1,0 +1,1311 @@
+/* VARIABLES: */
+@font-face {
+  font-family: AXIS;
+  src: url("../fonts/AXIS-ExtraBold.ttf") format("ttf"), url("../fonts/AXIS-ExtraBold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+/*global stuff*/
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: #151515;
+}
+a {
+  text-decoration: none;
+}
+h2 {
+  text-transform: uppercase;
+  text-align: center;
+  margin: 50px auto 0 auto;
+  font-size: 55px;
+  font-family: AXIS;
+}
+h2:after {
+  background: #fff;
+  height: 5px;
+  width: 80px;
+}
+.lh_button {
+  border: 1px solid #fff;
+  color: #fff;
+  font-family: AXIS;
+  word-spacing: 3px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 10px 0 20px 0;
+  min-height: 48px;
+  line-height: 48px;
+  padding: 0 15px;
+  position: relative;
+}
+.lh_button:after,
+.lh_button:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 0;
+}
+.lh_button.full_width {
+  width: 100%;
+  text-align: center;
+  padding: 0;
+}
+.lh_button.go_back {
+  border-style: solid solid solid none;
+}
+.lh_button.go_back:before,
+.lh_button.go_back:after {
+  border-style: solid;
+  right: 100%;
+}
+.lh_button.go_back:after {
+  border-color: transparent #fff transparent transparent;
+  border-width: 26px;
+  top: -2px;
+}
+.lh_button.go_back:before {
+  border-color: transparent #151515 transparent transparent;
+  border-width: 24px;
+  z-index: 1;
+}
+.lh_button:hover {
+  background: #dfdfdf;
+  color: #363636;
+}
+.lh_button:hover.go_back:before {
+  border-color: transparent #dfdfdf transparent transparent;
+}
+@media screen and (max-width: 30em) {
+  h2 {
+    margin-top: 70px;
+    font-size: 50px;
+  }
+}
+@media screen and (max-width: 20em) {
+  h2 {
+    font-size: 45px;
+  }
+}
+.transition-preset {
+  transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+  -moz-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+  -ms-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+  -o-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+  -transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+}
+.h2-bar-preset {
+  background: #fff;
+  height: 5px;
+  width: 80px;
+}
+.h3-bar-preset {
+  background: #363636;
+  height: 2px;
+  width: 60px;
+}
+.bar-middle-preset {
+  content: "";
+  background: #fff;
+  bottom: 0;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+  position: relative;
+  display: block;
+}
+.bar-left-preset {
+  content: "";
+  background: #fff;
+  bottom: 0;
+  position: relative;
+  display: block;
+  margin-bottom: 10px;
+}
+/*summarized stuff*/
+a {
+  color: #999;
+}
+p {
+  color: #999;
+}
+p,
+header nav ul li,
+footer {
+  font-family: 'Lato', sant-serif;
+  font-weight: 300;
+  line-height: 25px;
+  word-spacing: 3px;
+}
+/* broader objects and classes */
+.lh_page {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  float: left;
+  background: #151515;
+}
+header {
+  position: fixed;
+  z-index: 99;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+  left: 0;
+  width: 150px;
+  height: 200px;
+  background: rgba(33, 33, 33, 0.8);
+  font-family: AXIS;
+}
+header:hover #lh_main_menu a {
+  font-size: 16px;
+}
+header #lh_hamburger_menu,
+header #lh_phone_menu {
+  display: none;
+}
+header #lh_main_menu {
+  height: 100%;
+  margin: 0;
+  list-style: none;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+  -moz-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+  -ms-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+  -o-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+  -transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+}
+header #lh_main_menu #lh_logo {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  display: none;
+}
+header #lh_main_menu #lh_logo:hover {
+  background: none;
+}
+header #lh_main_menu a {
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #999;
+  height: 100%;
+  display: block;
+  text-align: center;
+  line-height: 40px;
+  width: 100%;
+  transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+  -moz-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+  -ms-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+  -o-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+  -transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+}
+header #lh_main_menu a:last-child {
+  min-width: 60px;
+}
+header #lh_main_menu a img {
+  height: 95%;
+  max-height: 140px;
+  max-width: 100%;
+}
+header #lh_main_menu a:hover {
+  background: #696969;
+  color: #fff;
+}
+.lh_menuItem_active {
+  color: #fff !important;
+}
+@media screen and (max-width: 48em) {
+  header #lh_main_menu {
+    height: 50px;
+  }
+  header #lh_main_menu .lh_menuItem_active {
+    color: #999;
+  }
+}
+@media screen and (min-width: 78.75em) {
+  header,
+  header #lh_main_menu,
+  header #lh_main_menu .lh_navItem,
+  header #lh_main_menu #lh_header_mailto,
+  header #lh_main_menu img {
+    transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+    -moz-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+    -ms-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+    -o-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+    -transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+  }
+  /*make header bigger on mouse-over*/
+}
+@media screen and (min-width: 64em) {
+  #lh_logo {
+    margin-right: auto;
+  }
+}
+@media screen and (max-width: 64em) {
+  header #lh_main_menu {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
+@media screen and (min-width: calc(48em + 1)) {
+  header:hover {
+    width: 250px;
+  }
+}
+@media all and (max-width: 48em) {
+  header,
+  header #lh_main_menu,
+  header #lh_main_menu .lh_navItem,
+  header #lh_main_menu #lh_header_mailto,
+  header #lh_main_menu img {
+    transition: all 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+    -moz-transition: all 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+    -ms-transition: all 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+    -o-transition: all 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+    -transition: all 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+  }
+  header {
+    top: 0 !important;
+    -ms-transform: none;
+        transform: none;
+    left: -65%;
+    height: 100%;
+    width: 65%;
+  }
+  #lh_header_mailto {
+    display: none !important;
+  }
+  #lh_hamburger_menu {
+    display: -ms-flexbox !important;
+    display: flex !important;
+    margin-right: auto;
+    border-bottom: none;
+    font-size: 25px;
+    height: 50px;
+    text-transform: uppercase;
+    width: 30%;
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    left: 100%;
+  }
+  #lh_hamburger_menu a {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    padding: 0 15px;
+    width: 100%;
+  }
+  #lh_hamburger_menu a span {
+    display: block;
+    position: absolute;
+    background: #999;
+    height: 4px;
+    width: 25px;
+    transition: background 0s 0.3s;
+  }
+  #lh_hamburger_menu a span:before,
+  #lh_hamburger_menu a span:after {
+    position: absolute;
+    display: block;
+    content: '';
+    background: #999;
+    height: 4px;
+    width: 25px;
+    transition-duration: 0.5s, 0.5s;
+  }
+  #lh_hamburger_menu a span:before {
+    top: -8px;
+    transition-property: top, transform;
+  }
+  #lh_hamburger_menu a span:after {
+    bottom: -8px;
+    transition-property: bottom, transform;
+  }
+  #lh_phone_menu {
+    margin-left: auto;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    height: 50px;
+    float: right;
+    width: 100%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+  }
+  #lh_phone_menu a {
+    width: 100%;
+    text-align: center;
+    display: block;
+    line-height: 50px;
+    font-size: 25px;
+  }
+  #lh_logo {
+    display: block;
+  }
+  #lh_logo a {
+    display: -ms-flexbox;
+    display: flex;
+  }
+  header #lh_main_menu {
+    position: relative;
+    -ms-flex-flow: column wrap;
+        flex-flow: column wrap;
+    padding: 0;
+  }
+  header #lh_main_menu .lh_navItem {
+    display: none;
+    text-align: center;
+    line-height: unset;
+  }
+  header #lh_main_menu:last-of-type a {
+    border-bottom: none;
+  }
+  .mobileMenuOpen {
+    left: 0;
+  }
+  .mobileMenuOpen #lh_main_menu {
+    height: unset;
+  }
+  .mobileMenuOpen #lh_main_menu .lh_navItem,
+  .mobileMenuOpen #lh_main_menu #lh_logo {
+    padding: 25px 0;
+    width: 100%;
+    border-bottom: 1px solid #dfdfdf;
+    font-size: 16px;
+    -ms-flex-pack: center;
+        justify-content: center;
+    transition: all 0.5s;
+  }
+  .mobileMenuOpen .lh_navItem {
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+  .mobileMenuOpen #lh_hamburger_menu a span:before,
+  .mobileMenuOpen #lh_hamburger_menu a span:after {
+    transition-duration: 0.5s, 0.5s;
+  }
+  .mobileMenuOpen #lh_hamburger_menu a span:after {
+    top: 5px;
+    right: 9px;
+    -ms-transform: rotate(45deg) scaleX(0.7);
+        transform: rotate(45deg) scaleX(0.7);
+  }
+  .mobileMenuOpen #lh_hamburger_menu a span:before {
+    -ms-transform: rotate(-45deg) scaleX(0.7);
+        transform: rotate(-45deg) scaleX(0.7);
+    top: -5px;
+    right: 9px;
+  }
+}
+#home {
+  background-image: url(../images/homeBackgroundSlider/homeSlider1.jpg);
+  background-position: center center;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-attachment: fixed;
+  box-shadow: inset 0 0 0 10000px rgba(255, 255, 255, 0.15);
+  transition: all 1000ms linear;
+  -moz-transition: all 1000ms linear;
+  -ms-transition: all 1000ms linear;
+  -o-transition: all 1000ms linear;
+  -transition: all 1000ms linear;
+  background-position: top center !important;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+@media screen and (max-width: 64em) {
+  #home {
+    background-attachment: scroll !important;
+  }
+}
+@media screen and (max-width: 1152px) {
+  #home {
+    background-image: url(../images/homeBackgroundSlider/homeSlider1-s.jpg);
+    background-position: center center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-attachment: fixed;
+    box-shadow: inset 0 0 0 10000px rgba(255, 255, 255, 0.15);
+    transition: all 1000ms linear;
+    -moz-transition: all 1000ms linear;
+    -ms-transition: all 1000ms linear;
+    -o-transition: all 1000ms linear;
+    -transition: all 1000ms linear;
+  }
+}
+@media screen and (max-width: 1152px) and screen and (max-width: 64em) {
+  #home {
+    background-attachment: scroll !important;
+  }
+}
+@media screen and (max-width: 1152px) and (orientation: portrait) {
+  #home {
+    background-image: url(../images/homeBackgroundSlider/homeSlider1-m.jpg);
+    background-position: center center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-attachment: fixed;
+    box-shadow: inset 0 0 0 10000px rgba(255, 255, 255, 0.15);
+    transition: all 1000ms linear;
+    -moz-transition: all 1000ms linear;
+    -ms-transition: all 1000ms linear;
+    -o-transition: all 1000ms linear;
+    -transition: all 1000ms linear;
+  }
+}
+@media screen and (max-width: 1152px) and (orientation: portrait) and screen and (max-width: 64em) {
+  #home {
+    background-attachment: scroll !important;
+  }
+}
+@media screen and (min-width: 1153px) and (max-width: 1536px) {
+  #home {
+    background-image: url(../images/homeBackgroundSlider/homeSlider1-m.jpg);
+    background-position: center center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-attachment: fixed;
+    box-shadow: inset 0 0 0 10000px rgba(255, 255, 255, 0.15);
+    transition: all 1000ms linear;
+    -moz-transition: all 1000ms linear;
+    -ms-transition: all 1000ms linear;
+    -o-transition: all 1000ms linear;
+    -transition: all 1000ms linear;
+  }
+}
+@media screen and (min-width: 1153px) and (max-width: 1536px) and screen and (max-width: 64em) {
+  #home {
+    background-attachment: scroll !important;
+  }
+}
+@media screen and (min-width: 1153px) and (max-width: 1536px) and (orientation: portrait) {
+  #home {
+    background-image: url(../images/homeBackgroundSlider/homeSlider1-l.jpg);
+    background-position: center center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-attachment: fixed;
+    box-shadow: inset 0 0 0 10000px rgba(255, 255, 255, 0.15);
+    transition: all 1000ms linear;
+    -moz-transition: all 1000ms linear;
+    -ms-transition: all 1000ms linear;
+    -o-transition: all 1000ms linear;
+    -transition: all 1000ms linear;
+  }
+}
+@media screen and (min-width: 1153px) and (max-width: 1536px) and (orientation: portrait) and screen and (max-width: 64em) {
+  #home {
+    background-attachment: scroll !important;
+  }
+}
+@media screen and (min-width: 1537px) and (max-width: 1890px) {
+  #home {
+    background-image: url(../images/homeBackgroundSlider/homeSlider1-l.jpg);
+    background-position: center center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-attachment: fixed;
+    box-shadow: inset 0 0 0 10000px rgba(255, 255, 255, 0.15);
+    transition: all 1000ms linear;
+    -moz-transition: all 1000ms linear;
+    -ms-transition: all 1000ms linear;
+    -o-transition: all 1000ms linear;
+    -transition: all 1000ms linear;
+  }
+}
+@media screen and (min-width: 1537px) and (max-width: 1890px) and screen and (max-width: 64em) {
+  #home {
+    background-attachment: scroll !important;
+  }
+}
+@media screen and (min-width: 1537px) and (max-width: 1890px) and (orientation: portrait) {
+  #home {
+    background-image: url(../images/homeBackgroundSlider/homeSlider1.jpg);
+    background-position: center center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-attachment: fixed;
+    box-shadow: inset 0 0 0 10000px rgba(255, 255, 255, 0.15);
+    transition: all 1000ms linear;
+    -moz-transition: all 1000ms linear;
+    -ms-transition: all 1000ms linear;
+    -o-transition: all 1000ms linear;
+    -transition: all 1000ms linear;
+  }
+}
+@media screen and (min-width: 1537px) and (max-width: 1890px) and (orientation: portrait) and screen and (max-width: 64em) {
+  #home {
+    background-attachment: scroll !important;
+  }
+}
+#home .lh_go_further {
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+  width: 100%;
+  height: 40px;
+  padding: 20px 0;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+  font-family: 'Lato', sant-serif;
+  transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), background-color 300ms linear;
+  -moz-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), background-color 300ms linear;
+  -ms-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), background-color 300ms linear;
+  -o-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), background-color 300ms linear;
+  -transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), background-color 300ms linear;
+}
+#home .lh_go_further:hover {
+  font-size: 20px;
+  background-color: #dfdfdf;
+}
+#home #lh_intro {
+  padding-top: 50px !important;
+  padding: 50px;
+  text-align: center;
+}
+#home #lh_intro h2 {
+  text-align: center;
+  font-size: 40px;
+  margin: 0;
+  line-height: 40px;
+  color: #fff;
+}
+#home #lh_intro h2:after {
+  content: "";
+  background: #fff;
+  bottom: 0;
+  position: relative;
+  display: block;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+}
+#home #lh_intro p {
+  margin: 0 auto;
+  max-width: 400px;
+  color: #fff;
+}
+@media screen and (max-width: 48em) {
+  #home #lh_intro {
+    padding: 30px;
+  }
+  #home #lh_intro h2 {
+    margin: 0;
+    font-size: 45px;
+    line-height: 45px;
+  }
+  #home #lh_intro p {
+    max-width: 400px;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 30em) {
+  #home #lh_intro {
+    padding: 20px;
+  }
+  #home #lh_intro h2 {
+    margin: 0;
+    font-size: 35px;
+    line-height: 35px;
+  }
+  #home #lh_intro p {
+    margin: 0 0 10px 0;
+    max-width: 400px;
+    width: 100%;
+    line-height: 20px;
+  }
+}
+@media screen and (max-width: 20em) {
+  #home #lh_intro h2 {
+    font-size: 32px;
+  }
+}
+#about {
+  background-color: #151515;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
+  min-height: 100%;
+}
+#about #lh_wrapper_gallery {
+  max-width: 1260px;
+  left: 50%;
+  position: relative;
+  -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+  padding: 20px;
+}
+@media screen and (max-width: 48em) {
+  #about #lh_wrapper_gallery {
+    max-width: 2000px;
+  }
+}
+#service {
+  background: #151515;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+#service h2 {
+  color: #fff;
+}
+#service h2:after {
+  content: "";
+  bottom: 0;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+  position: relative;
+  display: block;
+  background: #fff;
+}
+#service .lh_service {
+  width: 90%;
+  margin: 50px auto 50px auto;
+  -ms-flex-positive: 10;
+      flex-grow: 10;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: stretch;
+      align-items: stretch;
+}
+#service .lh_service ul {
+  margin: 0;
+  padding: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-align: stretch;
+      align-items: stretch;
+}
+#service .lh_service ul li {
+  position: relative;
+  list-style: none;
+  width: 30%;
+  float: left;
+  background-image: url(../images/homeBackgroundSlider/homeSlider1.jpg);
+  background-position: center center;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-attachment: fixed;
+  box-shadow: inset 0 0 0 10000px rgba(255, 255, 255, 0.15);
+  transition: all 1000ms linear;
+  -moz-transition: all 1000ms linear;
+  -ms-transition: all 1000ms linear;
+  -o-transition: all 1000ms linear;
+  -transition: all 1000ms linear;
+}
+@media screen and (max-width: 64em) {
+  #service .lh_service ul li {
+    background-attachment: scroll !important;
+  }
+}
+#service .lh_service ul li:last-child {
+  margin: 0;
+}
+#service .lh_service ul li a {
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
+}
+#service .lh_service ul li a .lh_tag_line {
+  width: 80%;
+  margin: 0 0 20px 20px;
+}
+#service .lh_service ul li a .lh_tag_line p {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+#service .lh_service ul li a .lh_tag_line h3 {
+  text-transform: uppercase;
+  font-size: 65px;
+  margin: 0 0 10px 0;
+  color: #fff;
+  font-family: AXIS;
+}
+#service .lh_service ul li a .lh_tag_line h3:after {
+  content: "";
+  bottom: 0;
+  position: relative;
+  display: block;
+  margin-bottom: 10px;
+  height: 5px;
+  width: 80px;
+  margin-top: 10px;
+  background: #fff;
+}
+#service .lh_service ul li.lh_people {
+  background-image: url(../images/background-people.jpg);
+  background-position: center center;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-attachment: fixed;
+  box-shadow: inset 0 0 0 10000px rgba(255, 255, 255, 0.15);
+  transition: all 1000ms linear;
+  -moz-transition: all 1000ms linear;
+  -ms-transition: all 1000ms linear;
+  -o-transition: all 1000ms linear;
+  -transition: all 1000ms linear;
+  background-attachment: scroll !important;
+  box-shadow: inset 0 0 0 10000px rgba(0, 0, 0, 0.4) !important;
+}
+@media screen and (max-width: 64em) {
+  #service .lh_service ul li.lh_people {
+    background-attachment: scroll !important;
+  }
+}
+#service .lh_service ul li.lh_business {
+  background-image: url(../images/background-business.jpg);
+  background-position: center center;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-attachment: fixed;
+  box-shadow: inset 0 0 0 10000px rgba(255, 255, 255, 0.15);
+  transition: all 1000ms linear;
+  -moz-transition: all 1000ms linear;
+  -ms-transition: all 1000ms linear;
+  -o-transition: all 1000ms linear;
+  -transition: all 1000ms linear;
+  background-attachment: scroll !important;
+  box-shadow: inset 0 0 0 10000px rgba(0, 0, 0, 0.4) !important;
+}
+@media screen and (max-width: 64em) {
+  #service .lh_service ul li.lh_business {
+    background-attachment: scroll !important;
+  }
+}
+#service .lh_service ul li.lh_world {
+  background-image: url(../images/background-world.jpg);
+  background-position: center center;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-attachment: fixed;
+  box-shadow: inset 0 0 0 10000px rgba(255, 255, 255, 0.15);
+  transition: all 1000ms linear;
+  -moz-transition: all 1000ms linear;
+  -ms-transition: all 1000ms linear;
+  -o-transition: all 1000ms linear;
+  -transition: all 1000ms linear;
+  background-attachment: scroll !important;
+  box-shadow: inset 0 0 0 10000px rgba(0, 0, 0, 0.4) !important;
+}
+@media screen and (max-width: 64em) {
+  #service .lh_service ul li.lh_world {
+    background-attachment: scroll !important;
+  }
+}
+@media screen and (max-width: 78.75em) {
+  #service {
+    width: 100%;
+  }
+  #service .lh_service ul li a .lh_tag_line {
+    position: relative;
+    float: left;
+    width: 80%;
+  }
+  #service .lh_service ul li a .lh_tag_line h3 {
+    font-size: 50px;
+    line-height: 45px;
+  }
+  #service .lh_service ul li a .lh_tag_line p {
+    margin: 0;
+    padding: 0;
+    float: left;
+    text-align: justify;
+  }
+}
+@media screen and (max-width: 64em) {
+  #service .lh_service ul {
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-align: center;
+        align-items: center;
+  }
+  #service .lh_service ul li {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+  #service .lh_service ul li a .lh_tag_line {
+    margin: 40px 0 20px 20px;
+  }
+}
+@media screen and (max-width: 30em) {
+  #service .lh_service ul li a .lh_tag_line p {
+    text-align: left;
+  }
+}
+@media screen and (max-width: 22.5em) {
+  #service .lh_service ul li a .lh_tag_line h3 {
+    font-size: 40px;
+    line-height: 35px;
+  }
+}
+#contact {
+  background-image: url(../images/background-contact.jpg);
+  background-position: center center;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-attachment: fixed;
+  box-shadow: inset 0 0 0 10000px rgba(255, 255, 255, 0.15);
+  transition: all 1000ms linear;
+  -moz-transition: all 1000ms linear;
+  -ms-transition: all 1000ms linear;
+  -o-transition: all 1000ms linear;
+  -transition: all 1000ms linear;
+  box-shadow: inset 0 0 0 10000px rgba(0, 0, 0, 0.4) !important;
+  background-position: top center !important;
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+}
+@media screen and (max-width: 64em) {
+  #contact {
+    background-attachment: scroll !important;
+  }
+}
+@media screen and (max-width: 1152px) {
+  #contact {
+    background-image: url(../images/background-contact.jpg);
+    background-position: center center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-attachment: fixed;
+    box-shadow: inset 0 0 0 10000px rgba(255, 255, 255, 0.15);
+    transition: all 1000ms linear;
+    -moz-transition: all 1000ms linear;
+    -ms-transition: all 1000ms linear;
+    -o-transition: all 1000ms linear;
+    -transition: all 1000ms linear;
+  }
+}
+@media screen and (max-width: 1152px) and screen and (max-width: 64em) {
+  #contact {
+    background-attachment: scroll !important;
+  }
+}
+@media screen and (max-width: 1152px) and (orientation: portrait) {
+  #contact {
+    background-image: url(../images/background-contact.jpg);
+    background-position: center center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-attachment: fixed;
+    box-shadow: inset 0 0 0 10000px rgba(255, 255, 255, 0.15);
+    transition: all 1000ms linear;
+    -moz-transition: all 1000ms linear;
+    -ms-transition: all 1000ms linear;
+    -o-transition: all 1000ms linear;
+    -transition: all 1000ms linear;
+  }
+}
+@media screen and (max-width: 1152px) and (orientation: portrait) and screen and (max-width: 64em) {
+  #contact {
+    background-attachment: scroll !important;
+  }
+}
+@media screen and (min-width: 1153px) and (max-width: 1536px) {
+  #contact {
+    background-image: url(../images/background-contact.jpg);
+    background-position: center center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-attachment: fixed;
+    box-shadow: inset 0 0 0 10000px rgba(255, 255, 255, 0.15);
+    transition: all 1000ms linear;
+    -moz-transition: all 1000ms linear;
+    -ms-transition: all 1000ms linear;
+    -o-transition: all 1000ms linear;
+    -transition: all 1000ms linear;
+  }
+}
+@media screen and (min-width: 1153px) and (max-width: 1536px) and screen and (max-width: 64em) {
+  #contact {
+    background-attachment: scroll !important;
+  }
+}
+@media screen and (min-width: 1153px) and (max-width: 1536px) and (orientation: portrait) {
+  #contact {
+    background-image: url(../images/background-contact.jpg);
+    background-position: center center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-attachment: fixed;
+    box-shadow: inset 0 0 0 10000px rgba(255, 255, 255, 0.15);
+    transition: all 1000ms linear;
+    -moz-transition: all 1000ms linear;
+    -ms-transition: all 1000ms linear;
+    -o-transition: all 1000ms linear;
+    -transition: all 1000ms linear;
+  }
+}
+@media screen and (min-width: 1153px) and (max-width: 1536px) and (orientation: portrait) and screen and (max-width: 64em) {
+  #contact {
+    background-attachment: scroll !important;
+  }
+}
+@media screen and (min-width: 1537px) and (max-width: 1890px) {
+  #contact {
+    background-image: url(../images/background-contact.jpg);
+    background-position: center center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-attachment: fixed;
+    box-shadow: inset 0 0 0 10000px rgba(255, 255, 255, 0.15);
+    transition: all 1000ms linear;
+    -moz-transition: all 1000ms linear;
+    -ms-transition: all 1000ms linear;
+    -o-transition: all 1000ms linear;
+    -transition: all 1000ms linear;
+  }
+}
+@media screen and (min-width: 1537px) and (max-width: 1890px) and screen and (max-width: 64em) {
+  #contact {
+    background-attachment: scroll !important;
+  }
+}
+@media screen and (min-width: 1537px) and (max-width: 1890px) and (orientation: portrait) {
+  #contact {
+    background-image: url(../images/background-contact.jpg);
+    background-position: center center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-attachment: fixed;
+    box-shadow: inset 0 0 0 10000px rgba(255, 255, 255, 0.15);
+    transition: all 1000ms linear;
+    -moz-transition: all 1000ms linear;
+    -ms-transition: all 1000ms linear;
+    -o-transition: all 1000ms linear;
+    -transition: all 1000ms linear;
+  }
+}
+@media screen and (min-width: 1537px) and (max-width: 1890px) and (orientation: portrait) and screen and (max-width: 64em) {
+  #contact {
+    background-attachment: scroll !important;
+  }
+}
+#contact h2 {
+  color: #fff;
+}
+#contact h2:after {
+  height: 5px;
+  width: 80px;
+  content: "";
+  background: #fff;
+  bottom: 0;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+  position: relative;
+  display: block;
+}
+#contact .lh_contact {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-family: 'Lato', sant-serif;
+  -ms-flex-positive: 10;
+      flex-grow: 10;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+}
+#contact .lh_contact ul {
+  padding: 0;
+}
+#contact .lh_contact ul li {
+  margin: 0 0 15px 0;
+  padding: 0;
+  list-style: none;
+  font-size: 17px;
+  font-weight: 300;
+}
+#contact .lh_contact ul li #lh_footer_logo {
+  max-width: 300px;
+}
+#contact .lh_contact ul li span {
+  padding-right: 10px;
+}
+#contact .lh_contact ul li a {
+  color: #fff;
+}
+@media screen and (max-width: 30em) {
+  #contact #lh_footer_logo {
+    display: none;
+  }
+}
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 10px 0 0 0;
+  font-size: 12px;
+  background: #151515;
+  color: #666;
+  font-family: AXIS;
+}
+footer a {
+  color: #666;
+}
+footer #lh_meta-nav {
+  margin: 10px 0 0 0;
+}
+footer #lh_meta-nav ul {
+  margin: 0;
+  padding: 0;
+}
+footer #lh_meta-nav ul li {
+  margin: 0;
+  padding: 0 2px 0 2px;
+  list-style: none;
+  display: inline-block;
+}
+footer #lh_meta-nav ul li:last-child {
+  border: none;
+}
+footer .lh_logo {
+  width: 100%;
+}
+footer .lh_logo img {
+  width: 155px;
+  height: auto;
+}
+@media screen and (min-width: 48em) {
+  #contact .lh_contact ul li {
+    font-size: 19px;
+  }
+  footer #lh_meta-nav {
+    margin: 0;
+  }
+}
+@media screen and (min-width: 48em) {
+  .is-fading-left {
+    transition: all 500ms;
+    -ms-transform: translate(-400px, 0);
+        transform: translate(-400px, 0);
+    opacity: 0;
+  }
+  .is-fading-right {
+    transition: all 500ms;
+    -ms-transform: translate(400px, 0);
+        transform: translate(400px, 0);
+    opacity: 0;
+  }
+  .is-fading-bottom {
+    transition: all 500ms;
+    -ms-transform: translate(0, 400px);
+        transform: translate(0, 400px);
+    opacity: 0;
+  }
+  .left {
+    -ms-transform: translate(0px, 0);
+        transform: translate(0px, 0);
+    opacity: 1;
+  }
+  .right {
+    -ms-transform: translate(0px, 0);
+        transform: translate(0px, 0);
+    opacity: 1;
+  }
+  .bottom {
+    -ms-transform: translate(0px, 0);
+        transform: translate(0px, 0);
+    opacity: 1;
+  }
+}
+@-moz-document url-prefix() {
+  #service .lh_service_content .image_slider div {
+    padding-top: 300px;
+  }
+  @media screen and (min-width: 48em) {
+    #service .lh_service_content .image_slider div {
+      padding-top: 500px;
+    }
+  }
+  @media screen and (max-width: 64em) {
+    #about,
+    #service {
+      height: unset;
+    }
+  }
+}
+#lh_impressum_page #lh_impressum {
+  background: #151515;
+  text-align: center;
+  border-bottom: 1px solid #dfdfdf;
+}
+#lh_impressum_page #lh_impressum h2 {
+  color: #fff;
+}
+#lh_impressum_page #lh_impressum h2:after {
+  height: 5px;
+  width: 80px;
+  content: "";
+  bottom: 0;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+  position: relative;
+  display: block;
+  background: #fff;
+}
+#lh_impressum_page #lh_impressum .lh_impressum_content {
+  width: 70%;
+  margin: 0 auto;
+}
+#lh_impressum_page #lh_impressum .lh_impressum_content .lh_section h3 {
+  font-family: AXIS;
+  color: #fff;
+  margin-bottom: 0;
+}
+#lh_impressum_page #lh_impressum .lh_impressum_content .lh_section h3:after {
+  background: #363636;
+  height: 2px;
+  width: 60px;
+  content: "";
+  bottom: 0;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+  position: relative;
+  display: block;
+  background: #fff;
+}
+@media screen and (max-width: 20em) {
+  #lh_impressum_page #lh_impressum h2 {
+    font-size: 45px;
+  }
+}
+.lg_gallery_page #lh_wrapper_gallery {
+  max-width: 1260px;
+  left: 50%;
+  position: relative;
+  -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+  padding: 20px;
+}
+.lg_gallery_page #lh_wrapper_gallery hr {
+  margin: 3px 0;
+}
+.lg_gallery_page #lh_wrapper_gallery a.lh_button.go_back {
+  -ms-transform: translateX(calc(-50% + 12px));
+      transform: translateX(calc(-50% + 12px));
+  left: 50%;
+  width: 209px;
+  text-align: center;
+}
+.lg_gallery_page #lh_wrapper_gallery .lh_button.is_last {
+  margin-top: 20px;
+}
+.lg_gallery_page #lh_wrapper_gallery .lh_partner {
+  margin: 20px 0 40px 0;
+}
+.lg_gallery_page #lh_wrapper_gallery .lh_partner #lh_partner_title {
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  font-family: AXIS;
+  font-size: 22px;
+  text-decoration: underline;
+}
+.lg_gallery_page #lh_wrapper_gallery .lh_partner .lh_partner_link {
+  margin: 0px;
+  border: 0;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+  text-align: center;
+  border-bottom: 1px solid;
+}
+@media screen and (max-width: 48em) {
+  .lg_gallery_page #lh_wrapper_gallery .lh_button.is_first {
+    margin-top: 40px;
+  }
+}
+.ug-gallery-wrapper .ug-lightbox-arrow-right,
+.ug-gallery-wrapper .ug-lightbox-arrow-left,
+.ug-gallery-wrapper .ug-lightbox-button-close,
+.ug-gallery-wrapper .ug-tile-icon.ug-button-play.ug-icon-zoom {
+  -ms-transform: scale(0.75);
+      transform: scale(0.75);
+}
