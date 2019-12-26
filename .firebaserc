@@ -1,5 +1,17 @@
 {
   "projects": {
     "default": "ludwighubertpages"
+  },
+  "targets": {
+    "ludwighubertpages": {
+      "hosting": {
+        "fotografie": [
+          "fotografie-ludwig-hubert"
+        ],
+        "ux": [
+          "ux-ludwig-hubert"
+        ]
+      }
+    }
   }
 }
