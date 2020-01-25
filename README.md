@@ -7,7 +7,7 @@ This is a repo containing my static pages:
 
 ## Hosting
 
-The pages are hosting on Google Firebase on:
+The pages are hosted on Google Firebase on:
 
  - https://ludwighubertpages.firebaseapp.com/fotografie/
  - https://ludwighubertpages.firebaseapp.com/ux/

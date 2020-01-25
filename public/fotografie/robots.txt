@@ -1,6 +1,4 @@
 # robots.txt zu http://www.ludwig-hubert.de
 
 User-agent: *
-Disallow: /
-Allow: /*.html
-Allow: /images/
+Allow: /
