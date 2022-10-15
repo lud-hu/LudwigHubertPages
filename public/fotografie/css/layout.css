@@ -1,7 +1,8 @@
 /* VARIABLES: */
 @font-face {
   font-family: AXIS;
-  src: url("../fonts/AXIS-ExtraBold.ttf") format("ttf"), url("../fonts/AXIS-ExtraBold.woff") format("woff");
+  src: url("../fonts/AXIS-ExtraBold.ttf") format("ttf"),
+    url("../fonts/AXIS-ExtraBold.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -44,7 +45,7 @@ h2:after {
 }
 .lh_button:after,
 .lh_button:before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   width: 0;
@@ -92,11 +93,16 @@ h2:after {
   }
 }
 .transition-preset {
-  transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
-  -moz-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
-  -ms-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
-  -o-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
-  -transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+  transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15),
+    font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+  -moz-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15),
+    font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+  -ms-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15),
+    font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+  -o-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15),
+    font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+  -transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15),
+    font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
 }
 .h2-bar-preset {
   background: #fff;
@@ -114,7 +120,7 @@ h2:after {
   bottom: 0;
   left: 50%;
   -ms-transform: translateX(-50%);
-      transform: translateX(-50%);
+  transform: translateX(-50%);
   position: relative;
   display: block;
 }
@@ -136,7 +142,8 @@ p {
 p,
 header nav ul li,
 footer {
-  font-family: 'Lato', sant-serif;
+  /* font-family: 'Lato', sans-serif; */
+  font-family: sans-serif;
   font-weight: 300;
   line-height: 25px;
   word-spacing: 3px;
@@ -154,7 +161,7 @@ header {
   z-index: 99;
   top: 50%;
   -ms-transform: translateY(-50%);
-      transform: translateY(-50%);
+  transform: translateY(-50%);
   left: 0;
   width: 150px;
   height: 200px;
@@ -175,24 +182,29 @@ header #lh_main_menu {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: end;
-      justify-content: flex-end;
+  justify-content: flex-end;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   -ms-flex-direction: column;
-      flex-direction: column;
-  transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
-  -moz-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
-  -ms-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
-  -o-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
-  -transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+  flex-direction: column;
+  transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15),
+    font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+  -moz-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15),
+    font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+  -ms-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15),
+    font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+  -o-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15),
+    font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+  -transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15),
+    font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
 }
 header #lh_main_menu #lh_logo {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   -ms-flex-pack: center;
-      justify-content: center;
+  justify-content: center;
   display: none;
 }
 header #lh_main_menu #lh_logo:hover {
@@ -207,11 +219,16 @@ header #lh_main_menu a {
   text-align: center;
   line-height: 40px;
   width: 100%;
-  transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
-  -moz-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
-  -ms-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
-  -o-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
-  -transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+  transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15),
+    font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+  -moz-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15),
+    font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+  -ms-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15),
+    font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+  -o-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15),
+    font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+  -transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15),
+    font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
 }
 header #lh_main_menu a:last-child {
   min-width: 60px;
@@ -242,11 +259,16 @@ header #lh_main_menu a:hover {
   header #lh_main_menu .lh_navItem,
   header #lh_main_menu #lh_header_mailto,
   header #lh_main_menu img {
-    transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
-    -moz-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
-    -ms-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
-    -o-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
-    -transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+    transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15),
+      font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+    -moz-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15),
+      font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+    -ms-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15),
+      font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+    -o-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15),
+      font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
+    -transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15),
+      font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15);
   }
   /*make header bigger on mouse-over*/
 }
@@ -258,7 +280,7 @@ header #lh_main_menu a:hover {
 @media screen and (max-width: 64em) {
   header #lh_main_menu {
     -ms-flex-pack: distribute;
-        justify-content: space-around;
+    justify-content: space-around;
   }
 }
 @media screen and (min-width: calc(48em + 1)) {
@@ -281,7 +303,7 @@ header #lh_main_menu a:hover {
   header {
     top: 0 !important;
     -ms-transform: none;
-        transform: none;
+    transform: none;
     left: -65%;
     height: 100%;
     width: 65%;
@@ -307,7 +329,7 @@ header #lh_main_menu a:hover {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
-        align-items: center;
+    align-items: center;
     padding: 0 15px;
     width: 100%;
   }
@@ -323,7 +345,7 @@ header #lh_main_menu a:hover {
   #lh_hamburger_menu a span:after {
     position: absolute;
     display: block;
-    content: '';
+    content: "";
     background: #999;
     height: 4px;
     width: 25px;
@@ -366,7 +388,7 @@ header #lh_main_menu a:hover {
   header #lh_main_menu {
     position: relative;
     -ms-flex-flow: column wrap;
-        flex-flow: column wrap;
+    flex-flow: column wrap;
     padding: 0;
   }
   header #lh_main_menu .lh_navItem {
@@ -390,7 +412,7 @@ header #lh_main_menu a:hover {
     border-bottom: 1px solid #dfdfdf;
     font-size: 16px;
     -ms-flex-pack: center;
-        justify-content: center;
+    justify-content: center;
     transition: all 0.5s;
   }
   .mobileMenuOpen .lh_navItem {
@@ -405,11 +427,11 @@ header #lh_main_menu a:hover {
     top: 5px;
     right: 9px;
     -ms-transform: rotate(45deg) scaleX(0.7);
-        transform: rotate(45deg) scaleX(0.7);
+    transform: rotate(45deg) scaleX(0.7);
   }
   .mobileMenuOpen #lh_hamburger_menu a span:before {
     -ms-transform: rotate(-45deg) scaleX(0.7);
-        transform: rotate(-45deg) scaleX(0.7);
+    transform: rotate(-45deg) scaleX(0.7);
     top: -5px;
     right: 9px;
   }
@@ -432,9 +454,9 @@ header #lh_main_menu a:hover {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   -ms-flex-pack: center;
-      justify-content: center;
+  justify-content: center;
 }
 @media screen and (max-width: 64em) {
   #home {
@@ -582,13 +604,24 @@ header #lh_main_menu a:hover {
   padding: 20px 0;
   left: 50%;
   -ms-transform: translateX(-50%);
-      transform: translateX(-50%);
-  font-family: 'Lato', sant-serif;
-  transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), background-color 300ms linear;
-  -moz-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), background-color 300ms linear;
-  -ms-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), background-color 300ms linear;
-  -o-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), background-color 300ms linear;
-  -transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15), background-color 300ms linear;
+  transform: translateX(-50%);
+  /* font-family: 'Lato', sans-serif; */
+  font-family: sans-serif;
+  transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15),
+    font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15),
+    background-color 300ms linear;
+  -moz-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15),
+    font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15),
+    background-color 300ms linear;
+  -ms-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15),
+    font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15),
+    background-color 300ms linear;
+  -o-transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15),
+    font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15),
+    background-color 300ms linear;
+  -transition: width 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15),
+    font-size 300ms cubic-bezier(0.32, 1.25, 0.375, 1.15),
+    background-color 300ms linear;
 }
 #home .lh_go_further:hover {
   font-size: 20px;
@@ -616,7 +649,7 @@ header #lh_main_menu a:hover {
   margin-top: 10px;
   left: 50%;
   -ms-transform: translateX(-50%);
-      transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 #home #lh_intro p {
   margin: 0 auto;
@@ -663,9 +696,9 @@ header #lh_main_menu a:hover {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-      flex-direction: column;
+  flex-direction: column;
   -ms-flex-pack: center;
-      justify-content: center;
+  justify-content: center;
   min-height: 100%;
 }
 #about #lh_wrapper_gallery {
@@ -673,7 +706,7 @@ header #lh_main_menu a:hover {
   left: 50%;
   position: relative;
   -ms-transform: translateX(-50%);
-      transform: translateX(-50%);
+  transform: translateX(-50%);
   padding: 20px;
 }
 @media screen and (max-width: 48em) {
@@ -686,9 +719,9 @@ header #lh_main_menu a:hover {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-      flex-direction: column;
+  flex-direction: column;
   -ms-flex-pack: center;
-      justify-content: center;
+  justify-content: center;
 }
 #service h2 {
   color: #fff;
@@ -698,7 +731,7 @@ header #lh_main_menu a:hover {
   bottom: 0;
   left: 50%;
   -ms-transform: translateX(-50%);
-      transform: translateX(-50%);
+  transform: translateX(-50%);
   position: relative;
   display: block;
   background: #fff;
@@ -707,11 +740,11 @@ header #lh_main_menu a:hover {
   width: 90%;
   margin: 50px auto 50px auto;
   -ms-flex-positive: 10;
-      flex-grow: 10;
+  flex-grow: 10;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: stretch;
-      align-items: stretch;
+  align-items: stretch;
 }
 #service .lh_service ul {
   margin: 0;
@@ -719,9 +752,9 @@ header #lh_main_menu a:hover {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: justify;
-      justify-content: space-between;
+  justify-content: space-between;
   -ms-flex-align: stretch;
-      align-items: stretch;
+  align-items: stretch;
 }
 #service .lh_service ul li {
   position: relative;
@@ -758,9 +791,9 @@ header #lh_main_menu a:hover {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-      flex-direction: column;
+  flex-direction: column;
   -ms-flex-pack: end;
-      justify-content: flex-end;
+  justify-content: flex-end;
 }
 #service .lh_service ul li a .lh_tag_line {
   width: 80%;
@@ -878,9 +911,9 @@ header #lh_main_menu a:hover {
 @media screen and (max-width: 64em) {
   #service .lh_service ul {
     -ms-flex-direction: column;
-        flex-direction: column;
+    flex-direction: column;
     -ms-flex-align: center;
-        align-items: center;
+    align-items: center;
   }
   #service .lh_service ul li {
     width: 80%;
@@ -921,9 +954,9 @@ header #lh_main_menu a:hover {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-      flex-direction: column;
+  flex-direction: column;
   -ms-flex-pack: start;
-      justify-content: flex-start;
+  justify-content: flex-start;
 }
 @media screen and (max-width: 64em) {
   #contact {
@@ -1073,7 +1106,7 @@ header #lh_main_menu a:hover {
   bottom: 0;
   left: 50%;
   -ms-transform: translateX(-50%);
-      transform: translateX(-50%);
+  transform: translateX(-50%);
   position: relative;
   display: block;
 }
@@ -1081,15 +1114,16 @@ header #lh_main_menu a:hover {
   width: 100%;
   text-align: center;
   color: #fff;
-  font-family: 'Lato', sant-serif;
+  /* font-family: 'Lato', sans-serif; */
+  font-family: sans-serif;
   -ms-flex-positive: 10;
-      flex-grow: 10;
+  flex-grow: 10;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;
-      justify-content: center;
+  justify-content: center;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
 }
 #contact .lh_contact ul {
   padding: 0;
@@ -1162,34 +1196,34 @@ footer .lh_logo img {
   .is-fading-left {
     transition: all 500ms;
     -ms-transform: translate(-400px, 0);
-        transform: translate(-400px, 0);
+    transform: translate(-400px, 0);
     opacity: 0;
   }
   .is-fading-right {
     transition: all 500ms;
     -ms-transform: translate(400px, 0);
-        transform: translate(400px, 0);
+    transform: translate(400px, 0);
     opacity: 0;
   }
   .is-fading-bottom {
     transition: all 500ms;
     -ms-transform: translate(0, 400px);
-        transform: translate(0, 400px);
+    transform: translate(0, 400px);
     opacity: 0;
   }
   .left {
     -ms-transform: translate(0px, 0);
-        transform: translate(0px, 0);
+    transform: translate(0px, 0);
     opacity: 1;
   }
   .right {
     -ms-transform: translate(0px, 0);
-        transform: translate(0px, 0);
+    transform: translate(0px, 0);
     opacity: 1;
   }
   .bottom {
     -ms-transform: translate(0px, 0);
-        transform: translate(0px, 0);
+    transform: translate(0px, 0);
     opacity: 1;
   }
 }
@@ -1224,7 +1258,7 @@ footer .lh_logo img {
   bottom: 0;
   left: 50%;
   -ms-transform: translateX(-50%);
-      transform: translateX(-50%);
+  transform: translateX(-50%);
   position: relative;
   display: block;
   background: #fff;
@@ -1246,7 +1280,7 @@ footer .lh_logo img {
   bottom: 0;
   left: 50%;
   -ms-transform: translateX(-50%);
-      transform: translateX(-50%);
+  transform: translateX(-50%);
   position: relative;
   display: block;
   background: #fff;
@@ -1261,7 +1295,7 @@ footer .lh_logo img {
   left: 50%;
   position: relative;
   -ms-transform: translateX(-50%);
-      transform: translateX(-50%);
+  transform: translateX(-50%);
   padding: 20px;
 }
 .lg_gallery_page #lh_wrapper_gallery hr {
@@ -1269,7 +1303,7 @@ footer .lh_logo img {
 }
 .lg_gallery_page #lh_wrapper_gallery a.lh_button.go_back {
   -ms-transform: translateX(calc(-50% + 12px));
-      transform: translateX(calc(-50% + 12px));
+  transform: translateX(calc(-50% + 12px));
   left: 50%;
   width: 209px;
   text-align: center;
@@ -1293,7 +1327,7 @@ footer .lh_logo img {
   border: 0;
   left: 50%;
   -ms-transform: translateX(-50%);
-      transform: translateX(-50%);
+  transform: translateX(-50%);
   text-align: center;
   border-bottom: 1px solid;
 }
@@ -1307,5 +1341,5 @@ footer .lh_logo img {
 .ug-gallery-wrapper .ug-lightbox-button-close,
 .ug-gallery-wrapper .ug-tile-icon.ug-button-play.ug-icon-zoom {
   -ms-transform: scale(0.75);
-      transform: scale(0.75);
+  transform: scale(0.75);
 }

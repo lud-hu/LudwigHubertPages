@@ -1,226 +1,323 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
+  <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-88359887-1"></script>
-    <script>
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-88359887-1"></script> -->
+    <!-- <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
         gtag('config', 'UA-88359887-1');
-    </script>
+    </script> -->
 
-    <meta charset="UTF-8">
-    <meta name="description" content="Fotograf im Raum Würzburg und München">
-    <meta name="keywords" content="Fotografie, Fotograf, Bilder, Fotos, Würzburg, München, Unterhaching, Oberbayern, Mainfranken, Business, Portrait, Porträt, Bewerbung, Bewerbungsfoto, Bewerbungsbild, Peoplefotografie, Menschen, Familienfotos, Pärchenfotos, Beautyshooting">
-    <meta name="author" content="Ludwig Hubert">
-    <meta name="viewport" content="width=device-width"/>
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="UTF-8" />
+    <meta name="description" content="Fotograf im Raum Würzburg und München" />
+    <meta
+      name="keywords"
+      content="Fotografie, Fotograf, Bilder, Fotos, Würzburg, München, Unterhaching, Oberbayern, Mainfranken, Business, Portrait, Porträt, Bewerbung, Bewerbungsfoto, Bewerbungsbild, Peoplefotografie, Menschen, Familienfotos, Pärchenfotos, Beautyshooting"
+    />
+    <meta name="author" content="Ludwig Hubert" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <title>Ludwig Hubert Fotografie</title>
 
     <!----------------- CSS & LESS-------------------->
-    <link rel="stylesheet" type="text/css" href="css/layout.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/layout.css" />
+    <!-- <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet" type="text/css"> -->
 
     <!----------------- javascript ----------------->
     <script src="js/jquery.js"></script>
     <script src="js/function.js"></script>
 
     <!----------------- Fonts ------------------>
-    <link rel="stylesheet" type="text/css" href="css/fontello.css">
+    <link rel="stylesheet" type="text/css" href="css/fontello.css" />
 
     <!---------------gallery stuff-------------->
-    <script type='text/javascript' src='unitegallery/unitegallery.min.js'></script>
-    <link rel='stylesheet' href='unitegallery/css/unite-gallery.css' type='text/css'/>
-    <script type='text/javascript' src='unitegallery/ug-theme-tiles.js'></script>
-</head>
+    <script
+      type="text/javascript"
+      src="unitegallery/unitegallery.min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="unitegallery/css/unite-gallery.css"
+      type="text/css"
+    />
+    <script
+      type="text/javascript"
+      src="unitegallery/ug-theme-tiles.js"
+    ></script>
+  </head>
 
-<body>
+  <body>
+    <!------------------------------------------>
+    <!----------------- HEADER ----------------->
+    <!------------------------------------------>
+    <header id="lh_header">
+      <div id="lh_hamburger_menu">
+        <a
+          onClick="javascript:document.getElementById('lh_header').classList.toggle('mobileMenuOpen'); return false;"
+          href=""
+          ><span></span
+        ></a>
+      </div>
+      <div id="lh_phone_menu">
+        <a href="mailto:info@ludwig-hubert.de"
+          ><span class="icon-mail-alt"></span
+        ></a>
+      </div>
 
-<!------------------------------------------>
-<!----------------- HEADER ----------------->
-<!------------------------------------------>
-<header id="lh_header">
-    <div id="lh_hamburger_menu"><a
-            onClick="javascript:document.getElementById('lh_header').classList.toggle('mobileMenuOpen'); return false;"
-            href=""><span></span></a></div>
-    <div id="lh_phone_menu"><a href="mailto:info@ludwig-hubert.de"><span class="icon-mail-alt"></span></a></div>
-
-    <div id="lh_main_menu">
-        <a href="#home" id="lh_logo"><img src="images/logo-white.svg" alt="Logo im Menü"/></a>
+      <div id="lh_main_menu">
+        <a href="#home" id="lh_logo"
+          ><img src="images/logo-white.svg" alt="Logo im Menü"
+        /></a>
         <a href="#home" class="lh_navItem">Start</a>
         <a href="#about" class="lh_navItem">Portfolio</a>
         <a href="#service" class="lh_navItem">Leistungen</a>
         <a href="#contact" class="lh_navItem">Kontakt</a>
-        <a href="mailto:info@ludwig-hubert.de" id="lh_header_mailto"><span class="icon-mail-alt"></span></a>
-    </div>
-</header>
+        <a href="mailto:info@ludwig-hubert.de" id="lh_header_mailto"
+          ><span class="icon-mail-alt"></span
+        ></a>
+      </div>
+    </header>
 
-<!------------------------------------------>
-<!----------------- CONTENT ---------------->
-<!------------------------------------------>
+    <!------------------------------------------>
+    <!----------------- CONTENT ---------------->
+    <!------------------------------------------>
 
-<!------------------------------------------>
-<!------------------ HOME ------------------>
-<section id="home" class="lh_page">
-
-    <!-- Headline -->
-    <div id="lh_intro">
+    <!------------------------------------------>
+    <!------------------ HOME ------------------>
+    <section id="home" class="lh_page">
+      <!-- Headline -->
+      <div id="lh_intro">
         <h2>Ludwig Hubert Fotografie</h2>
 
         <p>Porträt - People - Business und mehr.</p>
 
         <!--<a href="#contact" class="lh_button">Kontakt</a>-->
         <!--<a href="#about" class="lh_button">Weiter</a>-->
-        <a href="#about" class="lh_go_further">ENTDECKEN<br>
-            <span class="icon-down-open"></span>
+        <a href="#about" class="lh_go_further"
+          >ENTDECKEN<br />
+          <span class="icon-down-open"></span>
         </a>
-    </div>
+      </div>
+    </section>
 
-</section>
-
-<!------------------------------------------>
-<!------------------ ABOUT ----------------->
-<section id="about" class="lh_page">
-    <div id="lh_wrapper_gallery">
-        <div id="gallery" style="display: none;">
-            <img src="./images/galleries/home/startseite-portfolio1-thumb.jpg"
-                 data-image="./images/galleries/home/startseite-portfolio1.jpg" alt="image 1">
-            <img src="./images/galleries/home/startseite-portfolio2-thumb.jpg"
-                 data-image="./images/galleries/home/startseite-portfolio2.jpg" alt="image 1">
-            <img src="./images/galleries/home/startseite-portfolio3-thumb.jpg"
-                 data-image="./images/galleries/home/startseite-portfolio3.jpg" alt="image 1">
-            <img src="./images/galleries/home/startseite-portfolio4-thumb.jpg"
-                 data-image="./images/galleries/home/startseite-portfolio4.jpg" alt="image 1">
-            <img src="./images/galleries/home/startseite-portfolio5-thumb.jpg"
-                 data-image="./images/galleries/home/startseite-portfolio5.jpg" alt="image 1">
-            <img src="./images/galleries/home/startseite-portfolio6-thumb.jpg"
-                 data-image="./images/galleries/home/startseite-portfolio6.jpg" alt="image 1">
-            <img src="./images/galleries/home/startseite-portfolio7-thumb.jpg"
-                 data-image="./images/galleries/home/startseite-portfolio7.jpg" alt="image 1">
-            <img src="./images/galleries/home/startseite-portfolio8-thumb.jpg"
-                 data-image="./images/galleries/home/startseite-portfolio8.jpg" alt="image 1">
-            <img src="./images/galleries/home/startseite-portfolio9-thumb.jpg"
-                 data-image="./images/galleries/home/startseite-portfolio9.jpg" alt="image 1">
-            <img src="./images/galleries/home/startseite-portfolio10-thumb.jpg"
-                 data-image="./images/galleries/home/startseite-portfolio10.jpg" alt="image 1">
-            <img src="./images/galleries/home/startseite-portfolio11-thumb.jpg"
-                 data-image="./images/galleries/home/startseite-portfolio11.jpg" alt="image 1">
-            <img src="./images/galleries/home/startseite-portfolio12-thumb.jpg"
-                 data-image="./images/galleries/home/startseite-portfolio12.jpg" alt="image 1">
-            <img src="./images/galleries/home/startseite-portfolio13-thumb.jpg"
-                 data-image="./images/galleries/home/startseite-portfolio13.jpg" alt="image 1">
-            <img src="./images/galleries/home/startseite-portfolio14-thumb.jpg"
-                 data-image="./images/galleries/home/startseite-portfolio14.jpg" alt="image 1">
-            <img src="./images/galleries/home/startseite-portfolio15-thumb.jpg"
-                 data-image="./images/galleries/home/startseite-portfolio15.jpg" alt="image 1">
+    <!------------------------------------------>
+    <!------------------ ABOUT ----------------->
+    <section id="about" class="lh_page">
+      <div id="lh_wrapper_gallery">
+        <div id="gallery" style="display: none">
+          <img
+            src="./images/galleries/home/startseite-portfolio1-thumb.jpg"
+            data-image="./images/galleries/home/startseite-portfolio1.jpg"
+            alt="image 1"
+          />
+          <img
+            src="./images/galleries/home/startseite-portfolio2-thumb.jpg"
+            data-image="./images/galleries/home/startseite-portfolio2.jpg"
+            alt="image 1"
+          />
+          <img
+            src="./images/galleries/home/startseite-portfolio3-thumb.jpg"
+            data-image="./images/galleries/home/startseite-portfolio3.jpg"
+            alt="image 1"
+          />
+          <img
+            src="./images/galleries/home/startseite-portfolio4-thumb.jpg"
+            data-image="./images/galleries/home/startseite-portfolio4.jpg"
+            alt="image 1"
+          />
+          <img
+            src="./images/galleries/home/startseite-portfolio5-thumb.jpg"
+            data-image="./images/galleries/home/startseite-portfolio5.jpg"
+            alt="image 1"
+          />
+          <img
+            src="./images/galleries/home/startseite-portfolio6-thumb.jpg"
+            data-image="./images/galleries/home/startseite-portfolio6.jpg"
+            alt="image 1"
+          />
+          <img
+            src="./images/galleries/home/startseite-portfolio7-thumb.jpg"
+            data-image="./images/galleries/home/startseite-portfolio7.jpg"
+            alt="image 1"
+          />
+          <img
+            src="./images/galleries/home/startseite-portfolio8-thumb.jpg"
+            data-image="./images/galleries/home/startseite-portfolio8.jpg"
+            alt="image 1"
+          />
+          <img
+            src="./images/galleries/home/startseite-portfolio9-thumb.jpg"
+            data-image="./images/galleries/home/startseite-portfolio9.jpg"
+            alt="image 1"
+          />
+          <img
+            src="./images/galleries/home/startseite-portfolio10-thumb.jpg"
+            data-image="./images/galleries/home/startseite-portfolio10.jpg"
+            alt="image 1"
+          />
+          <img
+            src="./images/galleries/home/startseite-portfolio11-thumb.jpg"
+            data-image="./images/galleries/home/startseite-portfolio11.jpg"
+            alt="image 1"
+          />
+          <img
+            src="./images/galleries/home/startseite-portfolio12-thumb.jpg"
+            data-image="./images/galleries/home/startseite-portfolio12.jpg"
+            alt="image 1"
+          />
+          <img
+            src="./images/galleries/home/startseite-portfolio13-thumb.jpg"
+            data-image="./images/galleries/home/startseite-portfolio13.jpg"
+            alt="image 1"
+          />
+          <img
+            src="./images/galleries/home/startseite-portfolio14-thumb.jpg"
+            data-image="./images/galleries/home/startseite-portfolio14.jpg"
+            alt="image 1"
+          />
+          <img
+            src="./images/galleries/home/startseite-portfolio15-thumb.jpg"
+            data-image="./images/galleries/home/startseite-portfolio15.jpg"
+            alt="image 1"
+          />
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!------------------------------------------>
-<!----------------- Service ---------------->
-<section id="service" class="lh_page">
+    <!------------------------------------------>
+    <!----------------- Service ---------------->
+    <section id="service" class="lh_page">
+      <!-- Headline -->
+      <h2>Leistungen</h2>
 
-    <!-- Headline -->
-    <h2>Leistungen</h2>
-
-    <!-- Content -->
-    <article class="lh_service">
+      <!-- Content -->
+      <article class="lh_service">
         <ul>
+          <!-- first column -->
+          <li class="lh_people">
+            <a href="people.html">
+              <div class="lh_tag_line">
+                <h3>People</h3>
+                <p>
+                  Schnell kristallisierte sich heraus: Menschen mit all ihren
+                  Emotionen und Charakteren festzuhalten, fesselt mich am
+                  meisten. Das, was Menschen bewegt, im perfekten Augenblick
+                  einzufangen, ist einfach faszinierend. Deshalb war schnell
+                  klar, dass sich der vielleicht anspruchvollste Bereich der
+                  Fotografie zu meinem Liebling entwickelt.
+                </p>
+                <div class="lh_button">Mehr</div>
+              </div>
+            </a>
+          </li>
 
-            <!-- first column -->
-            <li class="lh_people">
-                <a href="people.html">
-                    <div class="lh_tag_line">
-                        <h3>People</h3>
-                        <p>Schnell kristallisierte sich heraus: Menschen mit all ihren Emotionen und Charakteren
-                            festzuhalten, fesselt mich am meisten. Das, was Menschen bewegt, im perfekten Augenblick
-                            einzufangen, ist einfach faszinierend. Deshalb war schnell klar, dass sich der vielleicht
-                            anspruchvollste Bereich der Fotografie zu meinem Liebling entwickelt.</p>
-                        <div class="lh_button">Mehr</div>
-                    </div>
-                </a>
-            </li>
+          <!-- second column -->
+          <li class="lh_business">
+            <a href="business.html">
+              <div class="lh_tag_line">
+                <h3>Business</h3>
+                <p>
+                  Unternehmen im richtigen Licht da stehen zu lassen, eine Feier
+                  eindrücklich für die Nachwelt festzuhalten oder im ersten
+                  Eindruck mit seiner Professionalität zu überzeugen - alles
+                  Dinge, die nicht einfach zu bewerkstelligen sind. Mit dem
+                  richtigen Bildmaterial wird das allerdings wesentlich
+                  einfacher! Egal ob Firmenpräsentationen, Bewerbungsfotos,
+                  Fotoworkshops oder Dokumentationen - melden Sie sich für ein
+                  unverbindliches Angebot bei mir.
+                </p>
+                <div class="lh_button">Mehr</div>
+              </div>
+            </a>
+          </li>
 
-            <!-- second column -->
-            <li class="lh_business">
-                <a href="business.html">
-                    <div class="lh_tag_line">
-                        <h3>Business</h3>
-                        <p>Unternehmen im richtigen Licht da stehen zu lassen, eine Feier eindrücklich für die Nachwelt
-                            festzuhalten oder im ersten Eindruck mit seiner Professionalität zu überzeugen - alles
-                            Dinge, die nicht einfach zu bewerkstelligen sind. Mit dem richtigen Bildmaterial wird das
-                            allerdings wesentlich einfacher! Egal ob Firmenpräsentationen, Bewerbungsfotos,
-                            Fotoworkshops oder Dokumentationen - melden Sie sich für ein unverbindliches Angebot bei
-                            mir.</p>
-                        <div class="lh_button">Mehr</div>
-                    </div>
-                </a>
-            </li>
-
-            <!-- third column -->
-            <li class="lh_world">
-                <a href="world.html">
-                    <div class="lh_tag_line">
-                        <h3>World</h3>
-                        <p>Unsere Natur und Umwelt ist etwas, was mich stets fasziniert. Die unglaubliche
-                            Facettenreichheit, die unzähligen fesselnden Orte auf der Welt und die zahllosen
-                            Naturschauspiele sind Dinge, die man nicht vergessen mag. Die Stimmung vor Ort aber in einem
-                            Bild festzuhalten, ist schwer. Das ist aber genau der Ansporn der nötig ist, um Nächte bei
-                            Minusgraden, anstrengende Touren und weite Strecken zu rechtfertigen. Wenn dann das
-                            entsprechende Ergebnis raus kommt, hat es sich aber gelohnt!</p>
-                        <div class="lh_button">Mehr</div>
-                    </div>
-                </a>
-            </li>
+          <!-- third column -->
+          <li class="lh_world">
+            <a href="world.html">
+              <div class="lh_tag_line">
+                <h3>World</h3>
+                <p>
+                  Unsere Natur und Umwelt ist etwas, was mich stets fasziniert.
+                  Die unglaubliche Facettenreichheit, die unzähligen fesselnden
+                  Orte auf der Welt und die zahllosen Naturschauspiele sind
+                  Dinge, die man nicht vergessen mag. Die Stimmung vor Ort aber
+                  in einem Bild festzuhalten, ist schwer. Das ist aber genau der
+                  Ansporn der nötig ist, um Nächte bei Minusgraden, anstrengende
+                  Touren und weite Strecken zu rechtfertigen. Wenn dann das
+                  entsprechende Ergebnis raus kommt, hat es sich aber gelohnt!
+                </p>
+                <div class="lh_button">Mehr</div>
+              </div>
+            </a>
+          </li>
         </ul>
-    </article>
-</section>
+      </article>
+    </section>
 
+    <!------------------------------------------>
+    <!----------------- Contact ---------------->
+    <section id="contact" class="lh_page">
+      <!-- Headline -->
+      <h2>Kontakt</h2>
 
-<!------------------------------------------>
-<!----------------- Contact ---------------->
-<section id="contact" class="lh_page">
-
-    <!-- Headline -->
-    <h2>Kontakt</h2>
-
-    <!-- Content -->
-    <article class="lh_contact">
+      <!-- Content -->
+      <article class="lh_contact">
         <ul>
-            <li><img id="lh_footer_logo" src="images/logo-white.svg" alt="Logo im Kontaktbereich"/></li>
-            <li><span class="icon-mail-alt"></span> <a href="mailto:info@ludwig-hubert.de">info@ludwig-hubert.de</a>
-            </li>
-            <li><span class="icon-instagram"></span><a href="https://www.instagram.com/ludwighubertfotograf/">@ludwighubertfotograf</a>
-            </li>
-            <li><span class="icon-facebook-official"></span><a href="https://www.facebook.com/ludwig.hubert.fotograf/">Ludwig
-                Hubert - Fotograf</a>
-            </li>
-            <li><span class="icon-500px"></span><a href="https://500px.com/luhu">Ludwig Hubert 500px</a>
-            </li>
+          <li>
+            <img
+              id="lh_footer_logo"
+              src="images/logo-white.svg"
+              alt="Logo im Kontaktbereich"
+            />
+          </li>
+          <li>
+            <span class="icon-mail-alt"></span>
+            <a href="mailto:info@ludwig-hubert.de">info@ludwig-hubert.de</a>
+          </li>
+          <li>
+            <span class="icon-instagram"></span
+            ><a href="https://www.instagram.com/ludwighubertfotograf/"
+              >@ludwighubertfotograf</a
+            >
+          </li>
+          <li>
+            <span class="icon-facebook-official"></span
+            ><a href="https://www.facebook.com/ludwig.hubert.fotograf/"
+              >Ludwig Hubert - Fotograf</a
+            >
+          </li>
+          <li>
+            <span class="icon-500px"></span
+            ><a href="https://500px.com/luhu">Ludwig Hubert 500px</a>
+          </li>
         </ul>
-    </article>
+      </article>
 
-    <!-- Footer -->
-    <footer>
-
+      <!-- Footer -->
+      <footer>
         <!-- Logo -->
-        <div class="lh_logo"><a href="#home"><img src="images/logo-white.svg" alt="Logo im Footer"/></a></div>
+        <div class="lh_logo">
+          <a href="#home"
+            ><img src="images/logo-white.svg" alt="Logo im Footer"
+          /></a>
+        </div>
 
         <!-- meta navi -->
         <nav id="lh_meta-nav">
-            <ul>
-                <li><a href="impressum.html">Impressum</a> - <a href="datenschutz.html">Datenschutz</a></li>
-            </ul>
+          <ul>
+            <li>
+              <a href="impressum.html">Impressum</a> -
+              <a href="datenschutz.html">Datenschutz</a>
+            </li>
+          </ul>
         </nav>
 
         <!-- meta navi -->
         <div id="lh_copyright">Design by Ludwig Hubert</div>
-    </footer>
-
-</section>
-
-</body>
+      </footer>
+    </section>
+  </body>
 </html>
