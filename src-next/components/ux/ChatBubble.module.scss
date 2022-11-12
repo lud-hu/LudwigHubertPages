@@ -1,0 +1,90 @@
+.lh_bubble {
+  color: black;
+  position: relative;
+  max-width: 70%;
+
+  background: white;
+  margin: 10px 0;
+  padding: 20px 15px;
+
+  border-radius: 10px;
+
+  &:after {
+    content: "";
+    position: absolute;
+    border: 26px solid transparent;
+    height: 0;
+    width: 0;
+  }
+
+  &.left {
+    background: var(--chat-bubble-outgoing-background);
+    color: var(--chat-bubble-outgoing-text);
+    margin-left: 26px;
+
+    &:after {
+      left: -26px;
+      top: 15px;
+      border-right-color: var(--chat-bubble-outgoing-background);
+      border-left: 0;
+      border-top: 0;
+    }
+  }
+
+  &.right {
+    margin-left: auto;
+    margin-right: 26px;
+    background: var(--chat-bubble-ingoing-background);
+    color: var(--chat-bubble-ingoing-text);
+
+    &:after {
+      right: -26px;
+      top: 15px;
+      border-left-color: var(--chat-bubble-ingoing-background);
+      border-right: 0;
+      border-top: 0;
+    }
+  }
+
+  &.followup {
+    margin-top: 0px;
+  }
+}
+
+@keyframes fade-in-left {
+  0% {
+    transform: translateX(-400px);
+    opacity: 0;
+  }
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-right {
+  0% {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-400px);
+  animation: fade-in-left 0.75s;
+  animation-fill-mode: forwards;
+  animation-delay: var(--delay);
+}
+
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(400px);
+  animation: fade-in-right 0.75s;
+  animation-fill-mode: forwards;
+  animation-delay: var(--delay);
+}

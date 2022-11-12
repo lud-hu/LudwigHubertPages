@@ -1,0 +1,29 @@
+#reply_section {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+
+  textarea {
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    border-color: var(--color);
+  }
+
+  a {
+    padding: 5px;
+    border: 1px solid var(--color);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      background: var(--hover-background);
+    }
+
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
