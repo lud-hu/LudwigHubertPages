@@ -19,107 +19,92 @@ const Portfolio: NextPage = () => {
         <Header />
         <section id={styles["home"]}>
           <div id={styles["profile_image"]}>
-            <img src="images/ludwig.jpg" alt="portrait picture of Ludwig" />
+            <img src="images/ludwig-new.jpg" alt="portrait picture of Ludwig" />
           </div>
 
           <div id={styles["lh_chat_messages"]}>
             <ChatBubbleRight index={1}>Who are you?</ChatBubbleRight>
             <ChatBubbleLeft index={2}>
-              Hi, I&apos;m Ludwig!
+              Hi, I&apos;m Ludwig! 👋
               <br />
-              I&apos;m currently working as a UX-Designer and Front-End
-              Developer at Capgemini in Munich and I&apos;m passionate about
-              User Experience, Design and Web Development. I completed my
-              Bachelor&apos;s degree in Human-Computer-Interaction in 2018.
               <br />
-              <br />I love to spend my spare time (preferably outdoors) with
-              photography, bouldering and playing the guitar! :)
+              I&apos;m currently working as an UX Engineer at Capgemini in
+              Munich and I&apos;m passionate about User Experience, Design and
+              Web Development. My focus is to achieve the best possible UX in
+              terms of technical quality of all touchpoints.
+              <br />
+              <br />I love to spend my spare time outdoors with photography,
+              climbing and paragliding! 🪂
             </ChatBubbleLeft>
             <ChatBubbleRight index={3}>
-              Where can I find some of your work?
+              What are you working on?
             </ChatBubbleRight>
             <ChatBubbleLeft index={4}>
-              Either on Dribbble or on Github:
+              I was working on several different projects for our enterprise
+              customers, where I combined my skills in UX and tech to build
+              prototypes, apps and services.
               <br />
+              Just a few buzzwords describing my area of work:
+              <ul>
+                <li>Interaction Concepts</li>
+                <li>High- & Low-fi prototypes</li>
+                <li>Bridging between Designers & Devs</li>
+                <li>Accessibility</li>
+                <li>Architecture & Service Design</li>
+                <li>High quality, maintainable and scalable code</li>
+              </ul>
+              <br />
+              Check out my github profile{" "}
               <a
                 href="https://github.com/lud-hu/"
                 target="_blank"
                 rel="noreferrer"
               >
-                Github @lud-hu
-              </a>{" "}
-              for some of my university projects and coding stuff.
-              <br />
-              <a
-                href="https://dribbble.com/lud-hu"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Dribbble @lud-hu
-              </a>{" "}
-              for designs and ideas I had.
-              <br />
-              <br />
-              Find an iteratively created prototype for enhancing meal planning
-              for familys{" "}
-              <a
-                href="https://github.com/lud-hu/MeetAndEat"
-                target="_blank"
-                rel="noreferrer"
-              >
-                here
+                @lud-hu
               </a>
-              .
+              !
             </ChatBubbleLeft>
             <ChatBubbleLeft index={5}>
-              I also designed and created a few websites like{" "}
-              <a
-                href="https://www.ludwig-hubert.de"
-                target="_blank"
-                rel="noreferrer"
-              >
-                www.ludwig-hubert.de
-              </a>{" "}
-              (my photography portfolio) and more.
-              <br />
-              <br />
-              Let me know if you want to see more! ;)
+              Some project examples:
+              <div className={styles["project-card-grid"]}>
+                <ProjectCard
+                  href=""
+                  title="Statistics Dashboard"
+                  subtitle="Enterprise B2C Platform & CMS: Frontend, Architecture, Tooling, Accessibility"
+                  img="url(./images/dashboard.jpg)"
+                />
+                <ProjectCard
+                  href=""
+                  title="Enterprise PIM"
+                  subtitle="B2B Platform: UX, Frontend, Architecture"
+                  img="url(./images/pim.jpg)"
+                />
+                <ProjectCard
+                  href="https://gliderlogbook.de"
+                  title="Digital Flightbook"
+                  subtitle="SaaS App"
+                  img="url(./images/glb-demo.jpg)"
+                />
+                <ProjectCard
+                  href="https://github.com/lud-hu/incidence-trend"
+                  title="Incidence Trend"
+                  subtitle="Web Project"
+                  img="url(./images/incidence-trend.png)"
+                />
+                <ProjectCard
+                  href="https://github.com/lud-hu/mvg-touch-timetable"
+                  title="Touch Timetable"
+                  subtitle="Interaction Concept"
+                  img="url(./images/touch-timetable.jpg)"
+                />
+              </div>
+              If you want to get some more info, just reach out to me.
             </ChatBubbleLeft>
-            <ChatBubbleLeft index={6}>
-              <ProjectCard
-                href="https://www.youtube.com/watch?v=1YzxBQvZrMI"
-                title="Meet-and-Eat"
-                subtitle="Tested Prototype"
-                img="url(./images/meetandeat.jpg)"
-              />
-              <ProjectCard
-                href="https://dribbble.com/shots/5054594-Restaurant-Menu-Card-Interaction-Concept"
-                title="Restaurant App"
-                subtitle="Interaction Concept"
-                img="url(./images/burger.jpg)"
-              />
-              <ProjectCard
-                href="https://partyservice-busch.de/"
-                title="Caterer Website"
-                subtitle="Coding Project"
-                img="url(./images/caterer-site.jpg)"
-              />
-              <ProjectCard
-                href="https://dribbble.com/shots/4523256-Fitness-App-Mockup-Screens"
-                title="Fitness App"
-                subtitle="Design Mockup"
-                img="url(./images/fitness-app.jpg)"
-              />
-              <ProjectCard
-                href="https://dribbble.com/shots/4523066-Interaction-Concept-Skiing-Area-App"
-                title="Skiing App"
-                subtitle="Interaction Concept"
-                img="url(./images/skiing-app.jpg)"
-              />
-            </ChatBubbleLeft>
-            <ChatBubbleRight index={7}>Any social networks?</ChatBubbleRight>
-            <ChatBubbleLeft index={8}>
-              Sure!{" "}
+            <ChatBubbleRight index={6}>
+              How can we get in touch?
+            </ChatBubbleRight>
+            <ChatBubbleLeft index={7}>
+              Feel free to add me on{" "}
               <a
                 href="https://www.linkedin.com/in/ludwig-hubert"
                 target="_blank"
@@ -127,7 +112,7 @@ const Portfolio: NextPage = () => {
               >
                 LinkedIn
               </a>
-              {" and "}
+              {" or "}
               <a
                 href="https://www.xing.com/profile/Ludwig_Hubert/"
                 target="_blank"
@@ -135,10 +120,18 @@ const Portfolio: NextPage = () => {
               >
                 Xing
               </a>
-              . Let's connect!
+              . Otherwise, just shoot me a message at{" "}
+              <a
+                href="mailto:info@ludwig-hubert.de"
+                target="_blank"
+                rel="noreferrer"
+              >
+                info@ludwig-hubert.de
+              </a>
+              .
             </ChatBubbleLeft>
-            <ChatBubbleLeft index={9}>
-              Any more questions? :)
+            <ChatBubbleLeft index={8}>
+              Any more questions? 😊
               <br />
               Just let me know:
             </ChatBubbleLeft>

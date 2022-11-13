@@ -13,7 +13,7 @@ export const ChatBubbleRight: React.FC<ChatBubbleProps> = (
   return (
     <div
       className={clsx(
-        styles["lh_bubble"],
+        styles["bubble"],
         styles["right"],
         styles["fade-in-right"]
       )}
@@ -33,11 +33,7 @@ export const ChatBubbleLeft: React.FC<ChatBubbleProps> = (
 ) => {
   return (
     <div
-      className={clsx(
-        styles["lh_bubble"],
-        styles["left"],
-        styles["fade-in-left"]
-      )}
+      className={clsx(styles["bubble"], styles["left"], styles["fade-in-left"])}
       style={
         {
           "--delay": `${(props.index || 1) * 150}ms`,
