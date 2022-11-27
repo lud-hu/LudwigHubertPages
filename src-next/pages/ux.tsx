@@ -5,6 +5,7 @@ import Header from "../components/ux/Header";
 import ProjectCard from "../components/ux/ProjectCard";
 import ReplySection from "../components/ux/ReplySection";
 import styles from "./ux.module.scss";
+import ExportedImage from "next-image-export-optimizer";
 
 const Portfolio: NextPage = () => {
   return (
@@ -12,14 +13,31 @@ const Portfolio: NextPage = () => {
       <Head>
         <title>Ludwig Hubert - Portfolio</title>
         <meta name="description" content="Portfolio page of Ludwig Hubert" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="96x96"
+          href="favicon-96x96.png"
+        />
       </Head>
 
-      <main className={""}>
+      <main className={styles["main-wrapper"]}>
         <Header />
         <section id={styles["home"]}>
           <div id={styles["profile_image"]}>
-            <img src="images/ludwig-new.jpg" alt="portrait picture of Ludwig" />
+            <ExportedImage
+              src={"/ludwig.jpg"}
+              alt={"portrait picture of Ludwig"}
+              width={250}
+              height={250}
+            />
           </div>
 
           <div id={styles["lh_chat_messages"]}>
@@ -71,40 +89,37 @@ const Portfolio: NextPage = () => {
                   href=""
                   title="Statistics Dashboard"
                   subtitle="Enterprise B2C Platform & CMS: Frontend, Architecture, Tooling, Accessibility"
-                  img="url(./images/dashboard.jpg)"
+                  img="url(./dashboard.jpg)"
                 />
                 <ProjectCard
                   href=""
                   title="Enterprise PIM"
                   subtitle="B2B Platform: UX, Frontend, Architecture"
-                  img="url(./images/pim.jpg)"
+                  img="url(./pim.jpg)"
                 />
                 <ProjectCard
                   href="https://gliderlogbook.de"
                   title="Digital Flightbook"
                   subtitle="SaaS App"
-                  img="url(./images/glb-demo.jpg)"
+                  img="url(./glb-demo.jpg)"
                 />
                 <ProjectCard
                   href="https://github.com/lud-hu/incidence-trend"
                   title="Incidence Trend"
                   subtitle="Web Project"
-                  img="url(./images/incidence-trend.png)"
+                  img="url(./incidence-trend.png)"
                 />
                 <ProjectCard
                   href="https://github.com/lud-hu/mvg-touch-timetable"
                   title="Touch Timetable"
                   subtitle="Interaction Concept"
-                  img="url(./images/touch-timetable.jpg)"
+                  img="url(./touch-timetable.jpg)"
                 />
               </div>
-              If you want to get some more info, just reach out to me.
             </ChatBubbleLeft>
-            <ChatBubbleRight index={6}>
-              How can we get in touch?
-            </ChatBubbleRight>
-            <ChatBubbleLeft index={7}>
-              Feel free to add me on{" "}
+            <ChatBubbleLeft index={6}>
+              Want to know more? Click on the project examples above or get in
+              touch with me at{" "}
               <a
                 href="https://www.linkedin.com/in/ludwig-hubert"
                 target="_blank"
@@ -112,15 +127,7 @@ const Portfolio: NextPage = () => {
               >
                 LinkedIn
               </a>
-              {" or "}
-              <a
-                href="https://www.xing.com/profile/Ludwig_Hubert/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Xing
-              </a>
-              . Otherwise, just shoot me a message at{" "}
+              {" or via "}
               <a
                 href="mailto:info@ludwig-hubert.de"
                 target="_blank"
@@ -129,11 +136,6 @@ const Portfolio: NextPage = () => {
                 info@ludwig-hubert.de
               </a>
               .
-            </ChatBubbleLeft>
-            <ChatBubbleLeft index={8}>
-              Any more questions? 😊
-              <br />
-              Just let me know:
             </ChatBubbleLeft>
             <ReplySection />
           </div>

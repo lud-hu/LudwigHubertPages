@@ -18,21 +18,11 @@ const socialAccounts: SocialAccountLinkProps[] = [
     logo: <Xing />,
     title: "Ludwig Hubert at Xing",
   },
-  //   {
-  //     href: "https://dribbble.com/lud-hu",
-  //     img: "images/dribbble.svg",
-  //     title: "Ludwig Hubert at Dribbble",
-  //   },
   {
     href: "https://github.com/lud-hu/",
     logo: <Github />,
     title: "Ludwig Hubert at Github",
   },
-  //   {
-  //     href: "https://twitter.com/ludwighu",
-  //     img: "images/twitter.svg",
-  //     title: "Ludwig Hubert at Twitter",
-  //   },
   {
     href: "mailto:ux@ludwig-hubert.de",
     logo: <Mail />,
