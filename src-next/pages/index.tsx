@@ -59,7 +59,7 @@ const Home: NextPage = () => {
           className={styles["centered-content"]}
           aria-label="Link to Ludwig's main job's portfolio page"
         >
-          <BackgroundImage src="/business-1.jpg" />
+          <BackgroundImage src="/business.jpg" />
           <section className={styles["centered-content"]}>
             <h2>UX ENGINEERING</h2>
           </section>
@@ -71,7 +71,7 @@ const Home: NextPage = () => {
           className={styles["centered-content"]}
           aria-label="Link to Ludwig's photography portfolio page"
         >
-          <BackgroundImage src="/homeSlider4-m.jpg" />
+          <BackgroundImage src="/photography.jpg" />
           <section className={styles["centered-content"]}>
             <h2>PHOTOGRAPHY</h2>
           </section>
@@ -83,7 +83,7 @@ const Home: NextPage = () => {
           className={styles["centered-content"]}
           aria-label="Link to Ludwig's flight logbook page"
         >
-          <BackgroundImage src="/glb.png" />
+          <BackgroundImage src="/glb.jpg" />
           <section className={styles["centered-content"]}>
             <h2>FLIGHT LOGBOOK</h2>
             <span>SaaS Progressive Web App</span>
