@@ -6,6 +6,7 @@ import ProjectCard from "../components/ux/ProjectCard";
 import ReplySection from "../components/ux/ReplySection";
 import styles from "./ux.module.scss";
 import ExportedImage from "next-image-export-optimizer";
+import PageFooter from "../components/shared/Footer";
 
 const Portfolio: NextPage = () => {
   return (
@@ -133,23 +134,7 @@ const Portfolio: NextPage = () => {
             <ReplySection />
           </div>
         </section>
-        <div id={styles["footer"]}>
-          <a
-            href="https://www.ludwig-hubert.de/impressum.html"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Imprint
-          </a>
-          {" - "}
-          <a
-            href="https://www.ludwig-hubert.de/datenschutz.html"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Privacy Statement
-          </a>
-        </div>
+        <PageFooter id={styles["footer"]} />
       </main>
     </>
   );

@@ -3,11 +3,12 @@ import React from "react";
 
 interface PageFooterProps {
   className?: string;
+  id?: string;
 }
 
 const PageFooter: React.FC<PageFooterProps> = (props: PageFooterProps) => {
   return (
-    <footer className={props.className}>
+    <footer className={props.className} id={props.id}>
       <Link
         href="/imprint.html"
         aria-label="Link to Ludwig's main job's portfolio page"
