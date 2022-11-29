@@ -54,7 +54,7 @@ const Home: NextPage = () => {
         </section>
         {/* JOB SECTION */}
         <Link
-          href="/ux"
+          href="/ux.html"
           id={styles["section-ux"]}
           className={styles["centered-content"]}
           aria-label="Link to Ludwig's main job's portfolio page"

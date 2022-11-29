@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 interface PageFooterProps {
@@ -7,21 +8,21 @@ interface PageFooterProps {
 const PageFooter: React.FC<PageFooterProps> = (props: PageFooterProps) => {
   return (
     <footer className={props.className}>
-      <a
-        href="https://www.ludwig-hubert.de/impressum.html"
-        target="_blank"
-        rel="noreferrer"
+      <Link
+        href="/imprint.html"
+        aria-label="Link to Ludwig's main job's portfolio page"
       >
         Imprint
-      </a>
-      {" - "}
+      </Link>
+      {/* I don't need the privacy page right now. */}
+      {/* {" - "}
       <a
         href="https://www.ludwig-hubert.de/datenschutz.html"
         target="_blank"
         rel="noreferrer"
       >
         Privacy Statement
-      </a>
+      </a> */}
     </footer>
   );
 };

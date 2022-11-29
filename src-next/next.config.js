@@ -13,6 +13,7 @@ const nextConfig = {
     return {
       "/": { page: "/" },
       "/ux": { page: "/ux" },
+      "/imprint": { page: "/imprint" },
     };
   },
   images: {
