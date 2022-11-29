@@ -63,24 +63,14 @@ const Portfolio: NextPage = () => {
               prototypes, apps and services.
               <br />
               Just a few buzzwords describing my area of work:
-              <ul>
+              <ul style={{ marginBottom: 0 }}>
                 <li>Interaction Concepts</li>
                 <li>High- & Low-fi prototypes</li>
                 <li>Bridging between Designers & Devs</li>
-                <li>Accessibility</li>
+                <li>High quality, maintainable and scalable front-end code</li>
                 <li>Architecture & Service Design</li>
-                <li>High quality, maintainable and scalable code</li>
+                <li>Accessibility</li>
               </ul>
-              <br />
-              Check out my github profile{" "}
-              <a
-                href="https://github.com/lud-hu/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                @lud-hu
-              </a>
-              !
             </ChatBubbleLeft>
             <ChatBubbleLeft index={5}>
               Some project examples:
@@ -117,9 +107,12 @@ const Portfolio: NextPage = () => {
                 />
               </div>
             </ChatBubbleLeft>
-            <ChatBubbleLeft index={6}>
-              Want to know more? Click on the project examples above or get in
-              touch with me at{" "}
+            <ChatBubbleRight index={6}>
+              Sounds cool. Tell me more!
+            </ChatBubbleRight>
+            <ChatBubbleLeft index={7}>
+              Just click on the project examples above or get in touch with me
+              at{" "}
               <a
                 href="https://www.linkedin.com/in/ludwig-hubert"
                 target="_blank"
