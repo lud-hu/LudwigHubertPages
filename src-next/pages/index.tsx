@@ -3,6 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import styles from "./index.module.scss";
 import ExportedImage from "next-image-export-optimizer";
+import PageFooter from "../components/shared/Footer";
 
 const BackgroundImage = (props: { src: string }) => (
   <ExportedImage src={props.src} alt={""} fill style={{ objectFit: "cover" }} />
@@ -49,27 +50,11 @@ const Home: NextPage = () => {
             UX Engineer & Photographer
           </span>
           <a href="mailto:info@ludwig-hubert.de">Get in touch</a>
-          <footer>
-            <a
-              href="https://www.ludwig-hubert.de/impressum.html"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Imprint
-            </a>
-            {" - "}
-            <a
-              href="https://www.ludwig-hubert.de/datenschutz.html"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Privacy Statement
-            </a>
-          </footer>
+          <PageFooter />
         </section>
         {/* JOB SECTION */}
         <Link
-          href="/ux.html"
+          href="/ux"
           id={styles["section-ux"]}
           className={styles["centered-content"]}
           aria-label="Link to Ludwig's main job's portfolio page"
@@ -104,6 +89,7 @@ const Home: NextPage = () => {
             <span>SaaS Progressive Web App</span>
           </section>
         </a>
+        <PageFooter className={styles["footer-mobile"]} />
       </main>
     </>
   );

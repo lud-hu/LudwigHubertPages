@@ -9,6 +9,12 @@ const nextConfig = {
   //   locales: ["en"],
   //   defaultLocale: "en",
   // },
+  exportPathMap: async function () {
+    return {
+      "/": { page: "/" },
+      "/ux": { page: "/ux" },
+    };
+  },
   images: {
     loader: "custom",
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
