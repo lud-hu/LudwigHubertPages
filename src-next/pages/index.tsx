@@ -66,7 +66,7 @@ const Home: NextPage = () => {
         </Link>
         {/* PHOTOGRAPHY SECTION */}
         <a
-          href="https://ludwig-hubert.de"
+          href="https://fotografie.ludwig-hubert.de"
           id={styles["section-photography"]}
           className={styles["centered-content"]}
           aria-label="Link to Ludwig's photography portfolio page"

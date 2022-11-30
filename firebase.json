@@ -12,8 +12,13 @@
     },
     {
       "target": "ux",
-      "public": "public/ux",
-      "rewrites": [],
+      "public": "src-next/out",
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
       "ignore": [
         "firebase.json",
         "**/.*",
