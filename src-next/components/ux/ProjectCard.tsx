@@ -3,10 +3,11 @@ import OpenInNewTab from "./logos/OpenInNewTab";
 import styles from "./ProjectCard.module.scss";
 
 interface ProjectCardProps {
-  href: string;
+  href?: string;
   title: string;
   img: string;
   subtitle?: string;
+  onClick?: () => any;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = (props: ProjectCardProps) => {
@@ -25,7 +26,11 @@ const ProjectCard: React.FC<ProjectCardProps> = (props: ProjectCardProps) => {
     ) : (
       <div
         className={styles["media-message"]}
-        style={{ backgroundImage: props.img }}
+        style={{
+          backgroundImage: props.img,
+          cursor: props.onClick ? "pointer" : "unset",
+        }}
+        onClick={props.onClick}
       >
         {innerProps.children}
       </div>

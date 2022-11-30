@@ -1,14 +1,48 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { ChatBubbleLeft, ChatBubbleRight } from "../components/ux/ChatBubble";
+import {
+  ChatBubbleLeft,
+  ChatBubbleProps,
+  ChatBubbleRight,
+} from "../components/ux/ChatBubble";
 import Header from "../components/ux/Header";
 import ProjectCard from "../components/ux/ProjectCard";
 import ReplySection from "../components/ux/ReplySection";
 import styles from "./ux.module.scss";
 import ExportedImage from "next-image-export-optimizer";
 import PageFooter from "../components/shared/Footer";
+import { useState } from "react";
 
 const Portfolio: NextPage = () => {
+  const [additionalChatBubbles, setAdditionalChatBubbles] = useState<
+    { id: string; props: ChatBubbleProps }[]
+  >([]);
+
+  /**
+   * Pushes a new chat bubble with some project details
+   * after a nice typing animation.
+   *
+   * @param id the id of the project to add (to avoid duplicates)
+   * @param props the props for the new chat bubble
+   */
+  const addProjectDetailChatBubble = (id: string, props: ChatBubbleProps) => {
+    // Don't add it twice
+    if (!additionalChatBubbles.map((b) => b.id).includes(id)) {
+      // First, add loading animation
+      setAdditionalChatBubbles((bubbles) => [
+        ...bubbles,
+        { id, props: { children: "..." } },
+      ]);
+      // After some time, remove animation and put in content
+      setTimeout(() => {
+        setAdditionalChatBubbles((bubbles) => [
+          ...bubbles.slice(0, bubbles.length - 1),
+          { id, props },
+        ]);
+      }, 1500);
+    }
+  };
+
   return (
     <>
       <Head>
@@ -77,12 +111,23 @@ const Portfolio: NextPage = () => {
               Some project examples:
               <div className={styles["project-card-grid"]}>
                 <ProjectCard
-                  href=""
+                  onClick={() =>
+                    addProjectDetailChatBubble("a", {
+                      children:
+                        "HI Exercitation incididunt ea labore id pariatur esse non labore ad reprehenderit enim laborum sunt.",
+                    })
+                  }
                   title="Statistics Dashboard"
                   subtitle="Enterprise B2C Platform & CMS: Frontend, Architecture, Tooling, Accessibility"
                   img="url(./dashboard.jpg)"
                 />
                 <ProjectCard
+                  onClick={() =>
+                    addProjectDetailChatBubble("b", {
+                      children:
+                        "HO Exercitation incididunt ea labore id pariatur esse non labore ad reprehenderit enim laborum sunt.",
+                    })
+                  }
                   href=""
                   title="Enterprise PIM"
                   subtitle="B2B Platform: UX, Frontend, Architecture"
@@ -131,6 +176,9 @@ const Portfolio: NextPage = () => {
               </a>
               .
             </ChatBubbleLeft>
+            {additionalChatBubbles.map((c) => (
+              <ChatBubbleLeft {...c.props} index={0} />
+            ))}
             <ReplySection />
           </div>
         </section>

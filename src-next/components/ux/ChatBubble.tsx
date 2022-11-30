@@ -2,7 +2,7 @@ import clsx from "clsx";
 import React, { ReactNode } from "react";
 import styles from "./ChatBubble.module.scss";
 
-interface ChatBubbleProps {
+export interface ChatBubbleProps {
   children: string | ReactNode;
   index?: number;
 }
@@ -36,7 +36,7 @@ export const ChatBubbleLeft: React.FC<ChatBubbleProps> = (
       className={clsx(styles["bubble"], styles["left"], styles["fade-in-left"])}
       style={
         {
-          "--delay": `${(props.index || 1) * 150}ms`,
+          "--delay": `${(props.index || 0) * 150}ms`,
         } as React.CSSProperties
       }
     >
