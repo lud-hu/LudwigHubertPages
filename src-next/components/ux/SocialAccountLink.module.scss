@@ -1,0 +1,16 @@
+.social_account_link {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+
+  img {
+    height: 40px;
+    color: white;
+    transition: all 400ms;
+    padding: 10px;
+  }
+
+  &:hover {
+    background: var(--hover-background);
+  }
+}

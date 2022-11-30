@@ -1,0 +1,195 @@
+$mobile-breakpoint: 600px;
+
+.main {
+  --my-val: 8750px;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.centered-content {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  transition: all;
+  transition-duration: 150ms;
+  font-family: sans-serif;
+  --factor: 1;
+
+  height: 25vh;
+  min-height: 200px;
+  width: 100%;
+
+  @media screen and (min-width: $mobile-breakpoint) {
+    position: absolute;
+    width: var(--width);
+    height: var(--height);
+    min-height: unset;
+  }
+
+  section {
+    box-shadow: inset 0 0 0 10000px rgba(0, 0, 0, 0.15);
+  }
+
+  z-index: 1;
+
+  &:hover {
+    --factor: 2;
+    z-index: 2;
+  }
+
+  h2 {
+    font-weight: lighter;
+    font-size: 2rem;
+    position: relative;
+
+    &:before {
+      content: "MORE ABOUT";
+      position: absolute;
+      bottom: 100%;
+      font-size: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+@mixin bg-image($url) {
+  background-image: url($url);
+  background-position: center center;
+  background-size: cover;
+}
+
+#section {
+  &-about {
+    --height: 50vh;
+    --width: 100vw;
+    @media screen and (min-width: $mobile-breakpoint) {
+      inset: 50% 0 0 0;
+    }
+    // background: var(--background);
+    z-index: 0;
+
+    height: auto;
+    padding: 100px 0;
+    // margin: 100px 0;
+
+    #profile_image {
+      position: relative;
+      width: 125px;
+      height: 125px;
+
+      img {
+        width: 100%;
+        border-radius: 50%;
+        border: 2px solid var(--color);
+      }
+    }
+
+    h2:before {
+      content: "";
+    }
+
+    a {
+      margin-top: 20px;
+      padding: 5px;
+      border: 1px solid var(--color);
+      border-radius: 2px;
+      color: var(--color);
+
+      &:hover {
+        background: var(--hover-background);
+      }
+    }
+
+    footer {
+      position: absolute;
+      bottom: 5px;
+      font-size: 0.7rem;
+
+      @media screen and (max-width: $mobile-breakpoint) {
+        display: none;
+      }
+
+      a {
+        border: none;
+      }
+    }
+  }
+
+  &-ux {
+    --height: 50vh;
+    --width: 100vw;
+
+    color: white;
+    @media screen and (min-width: $mobile-breakpoint) {
+      clip-path: polygon(
+        /* top left edge */ calc(var(--factor) * -1000px) -1000px,
+        /* top right edge */ calc(var(--width) * var(--factor) + 1000px) -1000px,
+        /* bottom edge */ 50% 100%
+      );
+      inset: 0 0 50% 0;
+    }
+    // @include bg-image("/business-1.jpg");
+  }
+
+  &-photography {
+    --height: 100vh;
+    --width: 50vw;
+
+    color: white;
+
+    @media screen and (min-width: $mobile-breakpoint) {
+      inset: 0 50% 0 0;
+      clip-path: polygon(
+        /* left edge */ 100% 50%,
+        /* top right edge */ -1000px calc(-1000px * var(--factor)),
+        /* bottom right edge */ -1000px calc(var(--height) + 1000px *
+              var(--factor))
+      );
+    }
+    // @include bg-image("/homeSlider4-m.jpg");
+  }
+
+  &-gliderlogbook {
+    --height: 100vh;
+    --width: 50vw;
+
+    color: white;
+
+    @media screen and (min-width: $mobile-breakpoint) {
+      inset: 0 50% 0 50%;
+      clip-path: polygon(
+        /* left edge */ 0 50%,
+        /* top right edge */ calc(var(--width) + 1000px)
+          calc(-1000px * var(--factor)),
+        /* bottom right edge */ calc(var(--width) + 1000px)
+          calc(var(--height) + 1000px * var(--factor))
+      );
+    }
+    // @include bg-image("/glb.png");
+
+    section {
+      box-shadow: inset 0 0 0 10000px rgba(0, 0, 0, 0.45);
+    }
+  }
+}
+
+.footer-mobile {
+  display: none;
+  padding: 15px;
+  font-size: 0.7rem;
+  text-align: center;
+
+  a {
+    color: inherit;
+  }
+
+  @media screen and (max-width: $mobile-breakpoint) {
+    display: block;
+  }
+}

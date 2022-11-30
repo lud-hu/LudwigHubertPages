@@ -1,0 +1,87 @@
+.main-wrapper {
+  overflow-x: hidden;
+  // Force height to 100vh, otherwise sticky scroll won't work
+  height: 100vh;
+}
+
+#profile_image {
+  max-width: 250px;
+
+  img {
+    position: sticky;
+    top: 30px;
+    width: 100%;
+    border-radius: 50%;
+
+    border: 2px solid var(--color);
+  }
+}
+
+#home {
+  max-width: 900px;
+  // padding: 0 20px;
+  margin: 50px auto;
+  padding-bottom: 40px;
+
+  display: flex;
+  justify-content: space-between;
+  #lh_chat_messages {
+    position: relative;
+
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.project-card-grid {
+  margin: 10px 0;
+  display: inline-grid;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+}
+
+@media screen and (max-width: 900px) {
+  #home {
+    flex-direction: column;
+    align-items: center;
+
+    #profile_image {
+      min-width: 200px;
+    }
+
+    #lh_chat_messages {
+      width: unset;
+      max-width: 100vw;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .project-card-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  #home {
+    margin: 50px 0px 0px 0px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #home {
+    #profile_image {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+#footer {
+  // text-align: center;
+  // border-top: 2px solid var(--color);
+  font-size: 0.7rem;
+  padding: 20px;
+  color: white;
+}

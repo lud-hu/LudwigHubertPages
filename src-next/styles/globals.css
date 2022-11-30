@@ -1,0 +1,17 @@
+html,
+body {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: var(--font);
+  color: var(--color);
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
