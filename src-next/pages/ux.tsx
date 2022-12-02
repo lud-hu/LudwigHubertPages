@@ -1,45 +1,82 @@
 import type { NextPage } from "next";
+import ExportedImage from "next-image-export-optimizer";
 import Head from "next/head";
+import { useState } from "react";
+import PageFooter from "../components/shared/Footer";
 import {
   ChatBubbleLeft,
   ChatBubbleProps,
   ChatBubbleRight,
 } from "../components/ux/ChatBubble";
 import Header from "../components/ux/Header";
+import TypingDots from "../components/ux/logos/TypingDots";
 import ProjectCard from "../components/ux/ProjectCard";
 import ReplySection from "../components/ux/ReplySection";
 import styles from "./ux.module.scss";
-import ExportedImage from "next-image-export-optimizer";
-import PageFooter from "../components/shared/Footer";
-import { useState } from "react";
 
 const Portfolio: NextPage = () => {
   const [additionalChatBubbles, setAdditionalChatBubbles] = useState<
-    { id: string; props: ChatBubbleProps }[]
+    { id: string; inOut: "in" | "out"; props: ChatBubbleProps }[]
   >([]);
 
   /**
    * Pushes a new chat bubble with some project details
-   * after a nice typing animation.
+   * after a nice typing animation and a question beforehand.
    *
    * @param id the id of the project to add (to avoid duplicates)
    * @param props the props for the new chat bubble
    */
-  const addProjectDetailChatBubble = (id: string, props: ChatBubbleProps) => {
+  const addProjectDetailChatBubble = (
+    id: string,
+    questionText: string,
+    props: ChatBubbleProps
+  ) => {
     // Don't add it twice
     if (!additionalChatBubbles.map((b) => b.id).includes(id)) {
       // First, add loading animation
       setAdditionalChatBubbles((bubbles) => [
         ...bubbles,
-        { id, props: { children: "..." } },
+        {
+          id,
+          inOut: "in",
+          props: {
+            scrollIntoView: true,
+            children: (
+              <TypingDots dotColor="var(--chat-bubble-incoming-text)" />
+            ),
+          },
+        },
       ]);
-      // After some time, remove animation and put in content
       setTimeout(() => {
+        // First, add loading animation
         setAdditionalChatBubbles((bubbles) => [
           ...bubbles.slice(0, bubbles.length - 1),
-          { id, props },
+          {
+            id,
+            inOut: "in",
+            props: {
+              scrollIntoView: true,
+              children: questionText,
+            },
+          },
+          {
+            id,
+            inOut: "out",
+            props: {
+              children: (
+                <TypingDots dotColor="var(--chat-bubble-outgoing-text)" />
+              ),
+            },
+          },
         ]);
-      }, 1500);
+        // After some time, remove animation and put in content
+        setTimeout(() => {
+          setAdditionalChatBubbles((bubbles) => [
+            ...bubbles.slice(0, bubbles.length - 1),
+            { id, inOut: "out", props },
+          ]);
+        }, 1000);
+      }, 1000);
     }
   };
 
@@ -76,8 +113,8 @@ const Portfolio: NextPage = () => {
           </div>
 
           <div id={styles["lh_chat_messages"]}>
-            <ChatBubbleRight index={1}>Who are you?</ChatBubbleRight>
-            <ChatBubbleLeft index={2}>
+            <ChatBubbleRight animationIndex={1}>Who are you?</ChatBubbleRight>
+            <ChatBubbleLeft animationIndex={2}>
               Hi, I&apos;m Ludwig! 👋
               <br />
               <br />
@@ -89,10 +126,10 @@ const Portfolio: NextPage = () => {
               <br />I love to spend my spare time outdoors with photography,
               climbing and paragliding! 🪂
             </ChatBubbleLeft>
-            <ChatBubbleRight index={3}>
+            <ChatBubbleRight animationIndex={3}>
               What are you working on?
             </ChatBubbleRight>
-            <ChatBubbleLeft index={4}>
+            <ChatBubbleLeft animationIndex={4}>
               I was working on several different projects for our enterprise
               customers, where I combined my skills in UX and tech to build
               prototypes, apps and services.
@@ -107,15 +144,19 @@ const Portfolio: NextPage = () => {
                 <li>Accessibility</li>
               </ul>
             </ChatBubbleLeft>
-            <ChatBubbleLeft index={5}>
+            <ChatBubbleLeft animationIndex={5}>
               Some project examples:
               <div className={styles["project-card-grid"]}>
                 <ProjectCard
                   onClick={() =>
-                    addProjectDetailChatBubble("a", {
-                      children:
-                        "HI Exercitation incididunt ea labore id pariatur esse non labore ad reprehenderit enim laborum sunt.",
-                    })
+                    addProjectDetailChatBubble(
+                      "dashboard",
+                      "Can you tell me more about the Statistics Dashboard?",
+                      {
+                        children:
+                          "HI Exercitation incididunt ea labore id pariatur esse non labore ad reprehenderit enim laborum sunt.",
+                      }
+                    )
                   }
                   title="Statistics Dashboard"
                   subtitle="Enterprise B2C Platform & CMS: Frontend, Architecture, Tooling, Accessibility"
@@ -123,10 +164,14 @@ const Portfolio: NextPage = () => {
                 />
                 <ProjectCard
                   onClick={() =>
-                    addProjectDetailChatBubble("b", {
-                      children:
-                        "HO Exercitation incididunt ea labore id pariatur esse non labore ad reprehenderit enim laborum sunt.",
-                    })
+                    addProjectDetailChatBubble(
+                      "pim",
+                      "Do you have some details for the PIM?",
+                      {
+                        children:
+                          "HO Exercitation incididunt ea labore id pariatur esse non labore ad reprehenderit enim laborum sunt.",
+                      }
+                    )
                   }
                   href=""
                   title="Enterprise PIM"
@@ -153,10 +198,10 @@ const Portfolio: NextPage = () => {
                 />
               </div>
             </ChatBubbleLeft>
-            <ChatBubbleRight index={6}>
+            <ChatBubbleRight animationIndex={6}>
               Sounds cool. Tell me more!
             </ChatBubbleRight>
-            <ChatBubbleLeft index={7}>
+            <ChatBubbleLeft animationIndex={7}>
               Just click on the project examples above or get in touch with me
               at{" "}
               <a
@@ -176,9 +221,13 @@ const Portfolio: NextPage = () => {
               </a>
               .
             </ChatBubbleLeft>
-            {additionalChatBubbles.map((c) => (
-              <ChatBubbleLeft {...c.props} index={0} />
-            ))}
+            {additionalChatBubbles.map((c) =>
+              c.inOut === "in" ? (
+                <ChatBubbleRight {...c.props} />
+              ) : (
+                <ChatBubbleLeft {...c.props} />
+              )
+            )}
             <ReplySection />
           </div>
         </section>
