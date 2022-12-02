@@ -160,7 +160,7 @@ const Portfolio: NextPage = () => {
                   }
                   title="Statistics Dashboard"
                   subtitle="Enterprise B2C Platform & CMS: Frontend, Architecture, Tooling, Accessibility"
-                  img="url(./dashboard.jpg)"
+                  img="./dashboard.jpg"
                 />
                 <ProjectCard
                   onClick={() =>
@@ -176,25 +176,25 @@ const Portfolio: NextPage = () => {
                   href=""
                   title="Enterprise PIM"
                   subtitle="B2B Platform: UX, Frontend, Architecture"
-                  img="url(./pim.jpg)"
+                  img="./pim.jpg"
                 />
                 <ProjectCard
                   href="https://gliderlogbook.de"
                   title="Digital Flightbook"
                   subtitle="SaaS App"
-                  img="url(./glb-demo.jpg)"
+                  img="./glb-demo.jpg"
                 />
                 <ProjectCard
                   href="https://github.com/lud-hu/incidence-trend"
                   title="Incidence Trend"
                   subtitle="Web Project"
-                  img="url(./incidence-trend.png)"
+                  img="./incidence-trend.png"
                 />
                 <ProjectCard
                   href="https://github.com/lud-hu/mvg-touch-timetable"
                   title="Touch Timetable"
                   subtitle="Interaction Concept"
-                  img="url(./touch-timetable.jpg)"
+                  img="./touch-timetable.jpg"
                 />
               </div>
             </ChatBubbleLeft>
