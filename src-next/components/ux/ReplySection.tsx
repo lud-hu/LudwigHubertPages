@@ -19,6 +19,7 @@ const ReplySection: React.FC = () => {
       ></textarea>
 
       <a
+        title="Send mail to Ludwig"
         href={`mailto:info@ludwig-hubert.de?subject=Message%20via%20ludwig-hubert.de${
           body.length > 0 ? `&body=${encodeURIComponent(body)}` : ""
         }`}
