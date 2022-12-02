@@ -16,6 +16,7 @@ const SocialAccountLink: React.FC<SocialAccountLinkProps> = (
       target="_blank"
       rel="noreferrer"
       className={styles["social_account_link"]}
+      title={props.title}
     >
       {props.logo}
     </a>

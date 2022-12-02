@@ -1,12 +1,14 @@
+import ExportedImage from "next-image-export-optimizer";
 import React, { ReactNode } from "react";
 import OpenInNewTab from "./logos/OpenInNewTab";
 import styles from "./ProjectCard.module.scss";
 
 interface ProjectCardProps {
-  href: string;
+  href?: string;
   title: string;
   img: string;
   subtitle?: string;
+  onClick?: () => any;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = (props: ProjectCardProps) => {
@@ -17,16 +19,20 @@ const ProjectCard: React.FC<ProjectCardProps> = (props: ProjectCardProps) => {
         rel="noreferrer"
         className={styles["media-message"]}
         href={props.href}
-        style={{ backgroundImage: props.img }}
       >
+        <ExportedImage src={props.img} alt={props.title} fill />
         <OpenInNewTab />
         {innerProps.children}
       </a>
     ) : (
       <div
         className={styles["media-message"]}
-        style={{ backgroundImage: props.img }}
+        style={{
+          cursor: props.onClick ? "pointer" : "unset",
+        }}
+        onClick={props.onClick}
       >
+        <ExportedImage src={props.img} alt={props.title} fill />
         {innerProps.children}
       </div>
     );
