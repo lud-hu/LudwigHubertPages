@@ -153,8 +153,11 @@ const Portfolio: NextPage = () => {
                       "dashboard",
                       "Can you tell me more about the Statistics Dashboard?",
                       {
-                        children:
-                          "HI Exercitation incididunt ea labore id pariatur esse non labore ad reprehenderit enim laborum sunt.",
+                        children: `In this project I worked on a public faced dashboard showing a lot of
+                        statistics and graphs as well as on the CMS used for managing the dashboard.
+                        Primarily I focused on frontend, architecture and accessibility, but also
+                        on interaction concepts and wireframing. The project was set up in a SCRUM team
+                        working in close collaboration with the customer.`,
                       }
                     )
                   }
@@ -168,8 +171,11 @@ const Portfolio: NextPage = () => {
                       "pim",
                       "Do you have some details for the PIM?",
                       {
-                        children:
-                          "HO Exercitation incididunt ea labore id pariatur esse non labore ad reprehenderit enim laborum sunt.",
+                        children: `This project was about the internal product information management tool
+                        of a manufacturer for household supplies. My focus was to introduce a modern web framework
+                        into the legacy application, including setting up a design component system. I also performed
+                        user research to conceptualize and test new interfaces before implementing them.
+                        The project was set up in one SCRUM team together with the customer.`,
                       }
                     )
                   }
