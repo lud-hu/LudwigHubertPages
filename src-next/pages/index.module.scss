@@ -100,6 +100,7 @@ $mobile-breakpoint: 600px;
       border: 1px solid var(--color);
       border-radius: 2px;
       color: var(--color);
+      text-decoration: none;
 
       &:hover {
         background: var(--hover-background);
@@ -126,6 +127,8 @@ $mobile-breakpoint: 600px;
     --width: 100vw;
 
     color: white;
+    text-decoration: none;
+
     @media screen and (min-width: $mobile-breakpoint) {
       clip-path: polygon(
         /* top left edge */ calc(var(--factor) * -1000px) -1000px,
@@ -142,6 +145,7 @@ $mobile-breakpoint: 600px;
     --width: 50vw;
 
     color: white;
+    text-decoration: none;
 
     @media screen and (min-width: $mobile-breakpoint) {
       inset: 0 50% 0 0;
@@ -160,6 +164,7 @@ $mobile-breakpoint: 600px;
     --width: 50vw;
 
     color: white;
+    text-decoration: none;
 
     @media screen and (min-width: $mobile-breakpoint) {
       inset: 0 50% 0 50%;

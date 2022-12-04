@@ -1,5 +1,5 @@
 import ExportedImage from "next-image-export-optimizer";
-import React, { ReactNode } from "react";
+import React, { ReactNode, useEffect, useMemo } from "react";
 import OpenInNewTab from "./logos/OpenInNewTab";
 import styles from "./ProjectCard.module.scss";
 
@@ -9,36 +9,54 @@ interface ProjectCardProps {
   img: string;
   subtitle?: string;
   onClick?: () => any;
+  "aria-label"?: string;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = (props: ProjectCardProps) => {
-  const Wrapper = (innerProps: { children: ReactNode }) =>
+/**
+ * Wraps the ProjectCard content either as anchor or button, depending on props.
+ */
+const Wrapper = React.memo(
+  (props: {
+    children: ReactNode;
+    href?: string;
+    onClick?: () => any;
+    "aria-label"?: string;
+  }) =>
     props.href ? (
       <a
         target="_blank"
         rel="noreferrer"
         className={styles["media-message"]}
         href={props.href}
+        aria-label={props["aria-label"]}
       >
-        <ExportedImage src={props.img} alt={props.title} fill />
         <OpenInNewTab />
-        {innerProps.children}
+        {props.children}
       </a>
     ) : (
-      <div
+      <button
         className={styles["media-message"]}
         style={{
           cursor: props.onClick ? "pointer" : "unset",
         }}
         onClick={props.onClick}
+        aria-label={props["aria-label"]}
       >
-        <ExportedImage src={props.img} alt={props.title} fill />
-        {innerProps.children}
-      </div>
-    );
+        {props.children}
+      </button>
+    )
+);
 
+Wrapper.displayName = "Wrapper";
+
+const ProjectCard: React.FC<ProjectCardProps> = (props: ProjectCardProps) => {
   return (
-    <Wrapper>
+    <Wrapper
+      href={props.href}
+      onClick={props.onClick}
+      aria-label={props["aria-label"]}
+    >
+      <ExportedImage src={props.img} alt="" fill />
       <div className={styles["text-wrapper"]}>
         <div>{props.title}</div>
         {props.subtitle && (

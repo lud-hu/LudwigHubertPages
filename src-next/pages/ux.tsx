@@ -9,82 +9,51 @@ import {
   ChatBubbleRight,
 } from "../components/ux/ChatBubble";
 import Header from "../components/ux/Header";
-import TypingDots from "../components/ux/logos/TypingDots";
 import ProjectCard from "../components/ux/ProjectCard";
+import ProjectDetailsChatConversation, {
+  ProjectDetails,
+} from "../components/ux/ProjectDetailsChatConversation";
 import ReplySection from "../components/ux/ReplySection";
 import styles from "./ux.module.scss";
 
 const Portfolio: NextPage = () => {
-  const [additionalChatBubbles, setAdditionalChatBubbles] = useState<
-    { id: string; inOut: "in" | "out"; props: ChatBubbleProps }[]
+  const [additionalProjectDetails, setAdditionalProjectDetails] = useState<
+    ProjectDetails[]
   >([]);
 
   /**
-   * Pushes a new chat bubble with some project details
-   * after a nice typing animation and a question beforehand.
+   * Adds a project detail object to the state (to be rendered by ProjectDetailsChatConversation component),
+   * if not already present.
    *
-   * @param id the id of the project to add (to avoid duplicates)
-   * @param props the props for the new chat bubble
+   * @param id a unique id to identify the project
+   * @param questionText A question to be shown as chat message.
+   * @param props The props for the answer chate message to be shown.
    */
   const addProjectDetailChatBubble = (
     id: string,
     questionText: string,
     props: ChatBubbleProps
   ) => {
-    // Don't add it twice
-    if (!additionalChatBubbles.map((b) => b.id).includes(id)) {
-      // First, add loading animation
-      setAdditionalChatBubbles((bubbles) => [
-        ...bubbles,
+    if (!additionalProjectDetails.map((b) => b.id).includes(id)) {
+      setAdditionalProjectDetails((a) => [
+        ...a,
         {
           id,
-          inOut: "in",
-          props: {
-            scrollIntoView: true,
-            children: (
-              <TypingDots dotColor="var(--chat-bubble-incoming-text)" />
-            ),
-          },
+          questionText,
+          chatBubbleProps: props,
         },
       ]);
-      setTimeout(() => {
-        // First, add loading animation
-        setAdditionalChatBubbles((bubbles) => [
-          ...bubbles.slice(0, bubbles.length - 1),
-          {
-            id,
-            inOut: "in",
-            props: {
-              scrollIntoView: true,
-              children: questionText,
-            },
-          },
-          {
-            id,
-            inOut: "out",
-            props: {
-              children: (
-                <TypingDots dotColor="var(--chat-bubble-outgoing-text)" />
-              ),
-            },
-          },
-        ]);
-        // After some time, remove animation and put in content
-        setTimeout(() => {
-          setAdditionalChatBubbles((bubbles) => [
-            ...bubbles.slice(0, bubbles.length - 1),
-            { id, inOut: "out", props },
-          ]);
-        }, 1000);
-      }, 1000);
     }
   };
 
   return (
     <>
       <Head>
-        <title>Ludwig Hubert - Portfolio</title>
-        <meta name="description" content="Portfolio page of Ludwig Hubert" />
+        <title>Ludwig Hubert - UX Designer and Software Engineer</title>
+        <meta
+          name="description"
+          content="Portfolio page of Ludwig Hubert - UX Designer and Software Engineer"
+        />
         <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
         <link
           rel="icon"
@@ -112,16 +81,21 @@ const Portfolio: NextPage = () => {
             />
           </div>
 
+          <h1 className="sr-only">
+            Intro about what I&apos;m doing, written like a chat conversation.
+          </h1>
+
           <div id={styles["lh_chat_messages"]}>
             <ChatBubbleRight animationIndex={1}>Who are you?</ChatBubbleRight>
             <ChatBubbleLeft animationIndex={2}>
               Hi, I&apos;m Ludwig! 👋
               <br />
               <br />
-              I&apos;m currently working as an UX Engineer at Capgemini in
-              Munich and I&apos;m passionate about User Experience, Design and
-              Web Development. My focus is to achieve the best possible UX in
-              terms of technical quality of all touchpoints.
+              I&apos;m currently working as a hybrid between UX Designer and
+              Software Engineer at Capgemini in Munich and I&apos;m passionate
+              about User Experience, Accessibility and Web Development. My focus
+              is to achieve the best possible UX in terms of technical quality
+              of all touchpoints.
               <br />
               <br />I love to spend my spare time outdoors with photography,
               climbing and paragliding! 🪂
@@ -148,40 +122,60 @@ const Portfolio: NextPage = () => {
               Some project examples:
               <div className={styles["project-card-grid"]}>
                 <ProjectCard
+                  aria-label="Click to add info about this project at the end of the chat conversation."
                   onClick={() =>
                     addProjectDetailChatBubble(
                       "dashboard",
                       "Can you tell me more about the Statistics Dashboard?",
                       {
-                        children: `In this project I worked on a public faced dashboard showing a lot of
-                        statistics and graphs as well as on the CMS used for managing the dashboard.
-                        Primarily I focused on frontend, architecture and accessibility, but also
-                        on interaction concepts and wireframing. The project was set up in a SCRUM team
-                        working in close collaboration with the customer.`,
+                        children: (
+                          <>
+                            In this project I worked on a public facing
+                            dashboard showing a lot of statistics and graphs as
+                            well as on the CMS used for managing the dashboard.
+                            Primarily I focused on frontend and architecture,
+                            but also on interaction concepts and wireframing. In
+                            the last few months I led the team for visual and
+                            technical Accessibility.
+                            <br />
+                            The project was set up in multiple SCRUM teams
+                            working in close collaboration with the customer.
+                          </>
+                        ),
                       }
                     )
                   }
                   title="Statistics Dashboard"
-                  subtitle="Enterprise B2C Platform & CMS: Frontend, Architecture, Tooling, Accessibility"
+                  subtitle="Enterprise B2C Platform & CMS"
                   img="./dashboard.jpg"
                 />
                 <ProjectCard
+                  aria-label="Click to add info about this project at the end of the chat conversation."
                   onClick={() =>
                     addProjectDetailChatBubble(
                       "pim",
                       "Do you have some details for the PIM?",
                       {
-                        children: `This project was about the internal product information management tool
-                        of a manufacturer for household supplies. My focus was to introduce a modern web framework
-                        into the legacy application, including setting up a design component system. I also performed
-                        user research to conceptualize and test new interfaces before implementing them.
-                        The project was set up in one SCRUM team together with the customer.`,
+                        children: (
+                          <>
+                            This project was about the internal product
+                            information management tool of a manufacturer for
+                            household supplies. My focus was to introduce a
+                            modern web framework into the legacy application,
+                            including setting up a design component system. I
+                            also performed user research to conceptualize and
+                            test new interfaces before implementing them.
+                            <br />
+                            The project was set up in one SCRUM team together
+                            with the customer.
+                          </>
+                        ),
                       }
                     )
                   }
                   href=""
                   title="Enterprise PIM"
-                  subtitle="B2B Platform: UX, Frontend, Architecture"
+                  subtitle="B2B Product Info Management"
                   img="./pim.jpg"
                 />
                 <ProjectCard
@@ -214,6 +208,7 @@ const Portfolio: NextPage = () => {
                 href="https://www.linkedin.com/in/ludwig-hubert"
                 target="_blank"
                 rel="noreferrer"
+                aria-label="LinkedIn profile of Ludwig"
               >
                 LinkedIn
               </a>
@@ -222,18 +217,16 @@ const Portfolio: NextPage = () => {
                 href="mailto:info@ludwig-hubert.de"
                 target="_blank"
                 rel="noreferrer"
+                aria-label="Mailto link to Ludwig"
               >
                 info@ludwig-hubert.de
               </a>
               .
             </ChatBubbleLeft>
-            {additionalChatBubbles.map((c) =>
-              c.inOut === "in" ? (
-                <ChatBubbleRight {...c.props} />
-              ) : (
-                <ChatBubbleLeft {...c.props} />
-              )
-            )}
+            <ProjectDetailsChatConversation
+              projectDetails={additionalProjectDetails}
+            />
+            <h2 className="sr-only">Get in touch with Ludwig</h2>
             <ReplySection />
           </div>
         </section>

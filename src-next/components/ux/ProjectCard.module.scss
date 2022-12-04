@@ -1,4 +1,5 @@
 .media-message {
+  border: none;
   background: white;
   width: 100%;
   padding-top: 66%;
@@ -22,7 +23,6 @@
     right: 0;
     height: 2em;
     background: rgba(0, 0, 0, 0.6);
-    color: white;
 
     display: flex;
     align-items: center;
@@ -33,7 +33,7 @@
   }
 
   &:hover .text-wrapper {
-    color: var(--link-color);
+    color: #fff;
     transition: all 400ms;
 
     height: 100%;

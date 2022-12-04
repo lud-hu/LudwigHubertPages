@@ -6,7 +6,13 @@ import ExportedImage from "next-image-export-optimizer";
 import PageFooter from "../components/shared/Footer";
 
 const BackgroundImage = (props: { src: string }) => (
-  <ExportedImage src={props.src} alt={""} fill style={{ objectFit: "cover" }} />
+  <ExportedImage
+    src={props.src}
+    alt={""}
+    fill
+    style={{ objectFit: "cover" }}
+    priority
+  />
 );
 
 const Home: NextPage = () => {
@@ -43,13 +49,19 @@ const Home: NextPage = () => {
               alt={"portrait picture of Ludwig"}
               height={125}
               width={125}
+              priority
             />
           </div>
           <h2>Ludwig Hubert</h2>
           <span style={{ fontWeight: "lighter" }} aria-label="Job description">
             UX Engineer & Photographer
           </span>
-          <a href="mailto:info@ludwig-hubert.de">Get in touch</a>
+          <a
+            href="mailto:info@ludwig-hubert.de"
+            style={{ textDecoration: "none" }}
+          >
+            Get in touch
+          </a>
           <PageFooter />
         </section>
         {/* JOB SECTION */}

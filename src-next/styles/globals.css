@@ -9,9 +9,18 @@ body {
 
 a {
   color: var(--link-color);
-  text-decoration: none;
+  text-decoration: var(--link-text-decoration);
 }
 
 * {
   box-sizing: border-box;
+}
+
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }

@@ -5,7 +5,7 @@
   // Dark theme by default
   --background: hsl(197deg 100% 12%);
   --color: white;
-  --link-color: #6cbdbd;
+  --link-color: var(--color);
   --logo-color: var(--color);
 
   --chat-bubble-ingoing-background: white;
@@ -20,11 +20,14 @@
   :root {
     --background: hsl(197deg 100% 98%);
     --color: black;
+    --link-color: var(--color);
 
     --chat-bubble-ingoing-background: lightgrey;
     --chat-bubble-ingoing-text: black;
+
     --chat-bubble-outgoing-background: hsl(197deg 100% 26%);
     --chat-bubble-outgoing-text: white;
+    --chat-bubble-outgoing-link-color: #fff;
 
     --hover-background: var(--chat-bubble-ingoing-background);
   }

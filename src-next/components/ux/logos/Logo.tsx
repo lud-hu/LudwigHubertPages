@@ -62,7 +62,6 @@ const Logo: React.FC = () => {
                 transform: rotate(0deg)
         }`}
       </style>
-      <title>logo-white</title>
       <rect className="st0" width="4941.3" height="930" />
       <g id="Z3">
         <g id="test">

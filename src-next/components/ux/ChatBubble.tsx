@@ -32,6 +32,7 @@ export const ChatBubbleRight: React.FC<ChatBubbleProps> = (
 
   return (
     <div
+      aria-label="Chat message to Ludwig"
       className={clsx(styles["bubble"], styles["right"], {
         [styles["fade-in-right"]]: animationIndex > 0,
       })}
@@ -50,8 +51,20 @@ export const ChatBubbleLeft: React.FC<ChatBubbleProps> = (
   props: ChatBubbleProps
 ) => {
   const { animationIndex = 0 } = props;
+
+  useEffect(() => {
+    if (props.scrollIntoView) {
+      // Hard coded access to the scroll container.
+      // Not the nicest way, but for the current controlled environment OK.
+      document
+        .getElementsByTagName("main")[0]
+        .scrollTo({ left: 0, top: 99999, behavior: "smooth" });
+    }
+  }, []);
+
   return (
     <div
+      aria-label="Chat message from Ludwig"
       className={clsx(styles["bubble"], styles["left"], {
         [styles["fade-in-left"]]: animationIndex > 0,
       })}

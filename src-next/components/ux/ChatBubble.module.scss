@@ -29,6 +29,12 @@
       border-left: 0;
       border-top: 0;
     }
+
+    a,
+    button {
+      font-size: unset;
+      color: var(--chat-bubble-outgoing-link-color);
+    }
   }
 
   &.right {
