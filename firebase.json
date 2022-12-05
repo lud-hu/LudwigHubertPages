@@ -2,7 +2,7 @@
   "hosting": [
     {
       "target": "fotografie",
-      "public": "public/fotografie/",
+      "public": "fotografie/",
       "rewrites": [],
       "ignore": [
         "firebase.json",
@@ -12,7 +12,7 @@
     },
     {
       "target": "ux",
-      "public": "src/out",
+      "public": "ux/out",
       "rewrites": [
         {
           "source": "**",
