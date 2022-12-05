@@ -37,9 +37,11 @@ $mobile-breakpoint: 600px;
 
   z-index: 1;
 
-  &:hover {
-    --factor: 2;
-    z-index: 2;
+  @media screen and not (prefers-reduced-motion) {
+    &:hover {
+      --factor: 2;
+      z-index: 2;
+    }
   }
 
   h2 {

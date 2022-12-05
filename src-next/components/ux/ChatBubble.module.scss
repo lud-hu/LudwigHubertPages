@@ -85,6 +85,12 @@
   animation: fade-in-left 0.75s;
   animation-fill-mode: forwards;
   animation-delay: var(--delay);
+
+  @media (prefers-reduced-motion) {
+    animation: unset;
+    transform: unset;
+    opacity: unset;
+  }
 }
 
 .fade-in-right {
@@ -93,4 +99,10 @@
   animation: fade-in-right 0.75s;
   animation-fill-mode: forwards;
   animation-delay: var(--delay);
+
+  @media (prefers-reduced-motion) {
+    animation: unset;
+    transform: unset;
+    opacity: unset;
+  }
 }
