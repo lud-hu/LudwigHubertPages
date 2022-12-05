@@ -180,6 +180,12 @@ const Portfolio: NextPage = () => {
                   img="./incidence-trend.png"
                 />
                 <ProjectCard
+                  href="https://github.com/lud-hu/LudwigHubertPages"
+                  title="My Portfolio"
+                  subtitle="This very page"
+                  img="./my-portfolio.png"
+                />
+                <ProjectCard
                   href="https://github.com/lud-hu/mvg-touch-timetable"
                   title="Touch Timetable"
                   subtitle="Interaction Concept"
