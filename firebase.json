@@ -12,7 +12,7 @@
     },
     {
       "target": "ux",
-      "public": "src-next/out",
+      "public": "src/out",
       "rewrites": [
         {
           "source": "**",
