@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { ChatBubbleLeft, ChatBubbleProps, ChatBubbleRight } from "./ChatBubble";
+import React, { ReactNode, useEffect, useState } from "react";
+import { ChatBubble, ChatBubbleProps } from "./ChatBubble";
 import TypingDots from "./logos/TypingDots";
 
 export interface ProjectDetails {
   id: string;
   questionText: string;
-  chatBubbleProps: ChatBubbleProps;
+  answerText: string | ReactNode;
 }
 
 interface ProjectDetailsChatConversationProps {
@@ -21,7 +21,7 @@ const ProjectDetailsChatConversation: React.FC<
   ProjectDetailsChatConversationProps
 > = (props: ProjectDetailsChatConversationProps) => {
   const [additionalChatBubbles, setAdditionalChatBubbles] = useState<
-    { id: string; inOut: "in" | "out"; props: ChatBubbleProps }[]
+    { id: string; props: ChatBubbleProps }[]
   >([]);
 
   /**
@@ -39,8 +39,8 @@ const ProjectDetailsChatConversation: React.FC<
         ...bubbles,
         {
           id: details.id,
-          inOut: "in",
           props: {
+            side: "right",
             scrollIntoView: true,
             children: (
               <TypingDots dotColor="var(--chat-bubble-incoming-text)" />
@@ -54,16 +54,15 @@ const ProjectDetailsChatConversation: React.FC<
           ...bubbles.slice(0, bubbles.length - 1),
           {
             id: details.id,
-            inOut: "in",
             props: {
+              side: "right",
               children: details.questionText,
             },
           },
           {
             id: details.id,
-            inOut: "out",
-            testa: 1,
             props: {
+              side: "left",
               children: (
                 <TypingDots dotColor="var(--chat-bubble-outgoing-text)" />
               ),
@@ -76,9 +75,9 @@ const ProjectDetailsChatConversation: React.FC<
             ...bubbles.slice(0, bubbles.length - 1),
             {
               id: details.id,
-              inOut: "out",
               props: {
-                ...details.chatBubbleProps,
+                children: details.answerText,
+                side: "left",
                 scrollIntoView: true,
               },
             },
@@ -92,23 +91,17 @@ const ProjectDetailsChatConversation: React.FC<
     if (props.projectDetails.length > 0) {
       animateProjectConversation(props.projectDetails.slice(-1)[0]);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.projectDetails]);
 
   return (
     <>
-      {additionalChatBubbles.map((c, i: number) => {
-        return c.inOut === "in" ? (
-          <ChatBubbleRight
-            {...c.props}
-            key={c.id + "r" + (c.props.scrollIntoView ? "scroll" : "")}
-          />
-        ) : (
-          <ChatBubbleLeft
-            {...c.props}
-            key={c.id + "l" + (c.props.scrollIntoView ? "scroll" : "")}
-          />
-        );
-      })}
+      {additionalChatBubbles.map((c, i: number) => (
+        <ChatBubble
+          {...c.props}
+          key={c.id + c.props.side + (c.props.scrollIntoView ? "scroll" : "")}
+        />
+      ))}
     </>
   );
 };

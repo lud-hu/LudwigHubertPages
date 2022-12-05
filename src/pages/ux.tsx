@@ -1,13 +1,9 @@
 import type { NextPage } from "next";
 import ExportedImage from "next-image-export-optimizer";
 import Head from "next/head";
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import PageFooter from "../components/shared/Footer";
-import {
-  ChatBubbleLeft,
-  ChatBubbleProps,
-  ChatBubbleRight,
-} from "../components/ux/ChatBubble";
+import { ChatBubble } from "../components/ux/ChatBubble";
 import Header from "../components/ux/Header";
 import ProjectCard from "../components/ux/ProjectCard";
 import ProjectDetailsChatConversation, {
@@ -32,7 +28,7 @@ const Portfolio: NextPage = () => {
   const addProjectDetailChatBubble = (
     id: string,
     questionText: string,
-    props: ChatBubbleProps
+    answerText: string | ReactNode
   ) => {
     if (!additionalProjectDetails.map((b) => b.id).includes(id)) {
       setAdditionalProjectDetails((a) => [
@@ -40,7 +36,7 @@ const Portfolio: NextPage = () => {
         {
           id,
           questionText,
-          chatBubbleProps: props,
+          answerText,
         },
       ]);
     }
@@ -86,8 +82,10 @@ const Portfolio: NextPage = () => {
           </h1>
 
           <div id={styles["lh_chat_messages"]}>
-            <ChatBubbleRight animationIndex={1}>Who are you?</ChatBubbleRight>
-            <ChatBubbleLeft animationIndex={2}>
+            <ChatBubble side="right" animationIndex={1}>
+              Who are you?
+            </ChatBubble>
+            <ChatBubble side="left" animationIndex={2}>
               Hi, I&apos;m Ludwig! 👋
               <br />
               <br />
@@ -99,11 +97,11 @@ const Portfolio: NextPage = () => {
               <br />
               <br />I love to spend my spare time outdoors with photography,
               climbing and paragliding! 🪂
-            </ChatBubbleLeft>
-            <ChatBubbleRight animationIndex={3}>
+            </ChatBubble>
+            <ChatBubble side="right" animationIndex={3}>
               What are you working on?
-            </ChatBubbleRight>
-            <ChatBubbleLeft animationIndex={4}>
+            </ChatBubble>
+            <ChatBubble side="left" animationIndex={4}>
               I was working on several different projects for our enterprise
               customers, where I combined my skills in UX and tech to build
               prototypes, apps and services.
@@ -117,8 +115,8 @@ const Portfolio: NextPage = () => {
                 <li>Architecture & Service Design</li>
                 <li>Accessibility</li>
               </ul>
-            </ChatBubbleLeft>
-            <ChatBubbleLeft animationIndex={5}>
+            </ChatBubble>
+            <ChatBubble side="left" animationIndex={5}>
               Some project examples:
               <div className={styles["project-card-grid"]}>
                 <ProjectCard
@@ -127,22 +125,17 @@ const Portfolio: NextPage = () => {
                     addProjectDetailChatBubble(
                       "dashboard",
                       "Can you tell me more about the Statistics Dashboard?",
-                      {
-                        children: (
-                          <>
-                            In this project I worked on a public facing
-                            dashboard showing a lot of statistics and graphs as
-                            well as on the CMS used for managing the dashboard.
-                            Primarily I focused on frontend and architecture,
-                            but also on interaction concepts and wireframing. In
-                            the last few months I led the team for visual and
-                            technical Accessibility.
-                            <br />
-                            The project was set up in multiple SCRUM teams
-                            working in close collaboration with the customer.
-                          </>
-                        ),
-                      }
+                      <>
+                        In this project I worked on a public facing dashboard
+                        showing a lot of statistics and graphs as well as on the
+                        CMS used for managing the dashboard. Primarily I focused
+                        on frontend and architecture, but also on interaction
+                        concepts and wireframing. In the last few months I led
+                        the team for visual and technical Accessibility.
+                        <br />
+                        The project was set up in multiple SCRUM teams working
+                        in close collaboration with the customer.
+                      </>
                     )
                   }
                   title="Statistics Dashboard"
@@ -155,22 +148,18 @@ const Portfolio: NextPage = () => {
                     addProjectDetailChatBubble(
                       "pim",
                       "Do you have some details for the PIM?",
-                      {
-                        children: (
-                          <>
-                            This project was about the internal product
-                            information management tool of a manufacturer for
-                            household supplies. My focus was to introduce a
-                            modern web framework into the legacy application,
-                            including setting up a design component system. I
-                            also performed user research to conceptualize and
-                            test new interfaces before implementing them.
-                            <br />
-                            The project was set up in one SCRUM team together
-                            with the customer.
-                          </>
-                        ),
-                      }
+                      <>
+                        This project was about the internal product information
+                        management tool of a manufacturer for household
+                        supplies. My focus was to introduce a modern web
+                        framework into the legacy application, including setting
+                        up a design component system. I also performed user
+                        research to conceptualize and test new interfaces before
+                        implementing them.
+                        <br />
+                        The project was set up in one SCRUM team together with
+                        the customer.
+                      </>
                     )
                   }
                   href=""
@@ -197,11 +186,11 @@ const Portfolio: NextPage = () => {
                   img="./touch-timetable.jpg"
                 />
               </div>
-            </ChatBubbleLeft>
-            <ChatBubbleRight animationIndex={6}>
+            </ChatBubble>
+            <ChatBubble side="right" animationIndex={6}>
               Sounds cool. Tell me more!
-            </ChatBubbleRight>
-            <ChatBubbleLeft animationIndex={7}>
+            </ChatBubble>
+            <ChatBubble side="left" animationIndex={7}>
               Just click on the project examples above or get in touch with me
               at{" "}
               <a
@@ -222,7 +211,7 @@ const Portfolio: NextPage = () => {
                 info@ludwig-hubert.de
               </a>
               .
-            </ChatBubbleLeft>
+            </ChatBubble>
             <ProjectDetailsChatConversation
               projectDetails={additionalProjectDetails}
             />
