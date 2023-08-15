@@ -90,10 +90,17 @@ const Portfolio: NextPage = () => {
               <br />
               <br />
               I&apos;m currently working as a hybrid between UX Designer and
-              Software Engineer at Capgemini in Munich and I&apos;m passionate
-              about User Experience, Accessibility and Web Development. My focus
-              is to achieve the best possible UX in terms of technical quality
-              of all touchpoints.
+              Software Engineer at{" "}
+              <a
+                href="https://polarstern-energie.de"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Polarstern Energie
+              </a>{" "}
+              in Munich and I&apos;m passionate about User Experience,
+              Accessibility and Web Development. My focus is to achieve the best
+              possible UX in terms of technical quality of all touchpoints.
               <br />
               <br />I love to spend my spare time outdoors with photography,
               climbing and paragliding! 🪂
@@ -102,7 +109,7 @@ const Portfolio: NextPage = () => {
               What are you working on?
             </ChatBubble>
             <ChatBubble side="left" animationIndex={4}>
-              I was working on several different projects for our enterprise
+              I was working on several different projects for enterprise
               customers, where I combined my skills in UX and tech to build
               prototypes, apps and services.
               <br />
