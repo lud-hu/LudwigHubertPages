@@ -4,7 +4,6 @@ import styles from "./Header.module.scss";
 import Logo from "./logos/Logo";
 import LinkedIn from "./logos/LinkedIn";
 import Github from "./logos/Github";
-import Xing from "./logos/Xing";
 import Mail from "./logos/ Mail";
 import Link from "next/link";
 
@@ -13,11 +12,6 @@ const socialAccounts: SocialAccountLinkProps[] = [
     href: "https://www.linkedin.com/in/ludwig-hubert",
     logo: <LinkedIn />,
     title: "Ludwig Hubert at LinkedIn",
-  },
-  {
-    href: "https://www.xing.com/profile/Ludwig_Hubert/",
-    logo: <Xing />,
-    title: "Ludwig Hubert at Xing",
   },
   {
     href: "https://github.com/lud-hu/",
